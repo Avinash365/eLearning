@@ -1,0 +1,211 @@
+.dash {
+    width: 1330px;
+    margin-left: 5rem;
+    height: auto;
+    /* border: solid black; */
+    display: flex;
+    gap: 3rem;
+}
+
+.dashBoard {
+    width: 20%;
+    height: auto;
+    /* border: solid black; */
+}
+
+.dashProfile {
+    width: 80%;
+    height: auto;
+    /* border: solid black; */
+}
+
+.dashProfileSearch,
+.dashProfileLogo,
+.dashProfileInfo,
+.dashProfileCourse {
+    width: 100%;
+    /* border: solid black; */
+}
+
+.dashProfileSearch {
+    height: 80px;
+    /* border: solid black;  */
+    /* display: flex;  */
+    /* display: flex;  */
+    /* flex-direction: column-reverse; */
+    /* gap: 1rem; */
+    /* align-items: center; */
+    /* float: right; */
+}
+
+.dashProfileSearch>input {
+    /* position: absolute; */
+    width: 256.64px;
+    height: 31.27px;
+    left: 456px;
+    top: 44px;
+    margin-top: 2rem;
+    /* padding: 1rem; */
+    border: none;
+    background: #FFFFFF;
+    box-shadow: 5.21094px 5.21094px 31.2656px 5.21094px rgba(0, 0, 0, 0.08);
+    border-radius: 15.6328px;
+}
+
+
+.dashProfileLogo {
+    /* height: 240px; */
+    /* position: absolute; */
+    width: 980px;
+    height: 206px;
+    /* left: 443px;
+    top: 96px; */
+    margin-bottom: 2rem;
+    background: #674818;
+    box-shadow: 5.21094px 5.21094px 31.2656px 5.21094px rgba(0, 0, 0, 0.08);
+    border-radius: 15px;
+    /* border: none; */
+    border: solid #674818;
+}
+
+.dashProfileLogo>p {
+    margin-left: 3rem;
+}
+
+.dashProfileInfo {
+    height: 300px;
+    display: flex;
+}
+
+.dashProfileInfo>.aboutMe {
+    width: 50%;
+    /* border: solid black; */
+    color: black;
+    height: fit-content;
+    margin-top: 1.5rem;
+
+    background: #FFFFFF;
+    box-shadow: 7px 7px 4px rgba(0, 0, 0, 0.25);
+    border-radius: 25px;
+}
+
+.dashProfileInfo>.aboutMe>.aboutMe1>button {
+    width: 60px;
+    height: 20px;
+    font-size: small;
+    color: white;
+    border-radius: 8px;
+    margin-top: 1rem;
+}
+
+.dashProfileInfo>.aboutMe>textarea {
+    margin-left: 1.5rem;
+    margin-top: 0px;
+    width: 410px;
+    height: 150px;
+    padding: 0.5rem;
+    /* border: none;  */
+    color: #674818;
+}
+
+.dashProfileCourse {
+    height: 500px;
+    display: flex;
+}
+
+
+.dashProfileCourse>.dailyNotic {
+
+    /* Frame 28 */
+
+    /* position: absolute; */
+    width: 320px;
+    height: 400px;
+    /* left: 1077px;
+    top: 635px; */
+    /* display: flex; */
+    justify-content: center;
+    background: #FFFFFF;
+    box-shadow: 6.77954px 6.77954px 40.6772px 6.77954px rgba(0, 0, 0, 0.08);
+    border-radius: 20.3386px;
+}
+
+.Notic {
+    /* border: solid black; */
+    margin-left: 3rem;
+    width: 80%;
+
+}
+
+.dashProfileCourse>.course {
+    width: 60%;
+    height: fit-content;
+    /* border: solid black; */
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 0px;
+    gap: 1rem;
+    margin: 0px;
+    margin-top: 3rem;
+    /* justify-content: center; */
+}
+
+.dashProfileCourse>.course>.allcourse {
+    width: fit-content;
+    height: 40px;
+    display: flex;
+    gap: 19rem;
+    /* justify-content: center;  */
+    align-items: center;
+    /* border: solid black;  */
+
+}
+
+.courseBox {
+    /* width: 250px; 
+    height: 100px; */
+    /* border: solid black; */
+    box-sizing: border-box;
+
+    width: 237.75px;
+    height: 104.22px;
+
+    background: rgba(165, 92, 24, 0.3);
+    /* Golden */
+    /* border: 2.60547px solid #674818; */
+    box-shadow: 5.21094px 5.21094px 31.2656px 5.21094px rgba(0, 0, 0, 0.08);
+    border-radius: 15.6328px;
+    margin: 0px;
+}
+
+.courseBox:hover {
+    border: 2.60547px solid #674818;
+}
+
+.dashBoard {
+    /* position: absolute; */
+    height: 1000px;
+    top: calc(50% - 901px/2 - 499px);
+    margin-top: 3rem;
+    /* Golden */
+    background: #674818;
+    border-radius: 25px; 
+    /* display: flex; */
+    /* flex-wrap: wrap; */
+    /* justify-content: center; */
+    /* align-items: center;  */
+    /* row-gap: 0px; */
+}
+.dashBoard>p>a{
+    text-decoration: none;
+    color: rgba(255, 255, 255, 0.5);
+    font-size: x-large;
+} 
+.dashBoard>p>a:hover{
+    color: white;
+}
+
+.dashBoard>p{
+    margin-left: 20%; 
+    margin-top: 2rem;
+}

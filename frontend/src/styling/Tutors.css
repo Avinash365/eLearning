@@ -1,0 +1,74 @@
+.tutor{
+    /* border: solid black; */
+    width: 1320px;
+    margin-left: 5.5rem;
+}
+.TutorsCard{
+    /* border: solid black;  */
+    max-width: 250px; 
+    min-width: 250px;
+    background-color: white;  
+    /* color: black;  */
+    padding: 0rem;     
+    animation: scrollCards 30s linear infinite;
+}  
+@keyframes scrollCards {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-300%);
+    }
+  }  
+
+.TutorsDiscription>p{
+    /* border: solid black;  */
+    font-size: smaller;
+    margin: 0; 
+    padding: 0; 
+    width: fit-content;
+    height: fit-content; 
+} 
+.TutorsCardPic{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+.logoDiv10{
+    display: flex; 
+    gap: 0.7rem;
+    width: fit-content;  
+    font-size: smaller;
+    /* border: solid black; */
+}   
+
+/* scrolling the List*/
+.scrollTutorsList{
+    display: flex;  
+    gap: 2rem;
+    width: 1320px; 
+    /* border: solid black;    */
+    margin-left:0px;
+    padding: 0rem; 
+    overflow: hidden; 
+    overflow-x: scroll; 
+
+    /* animation: scrollCards 30s linear infinite; */
+}  
+ 
+
+
+.scrollTutorsList::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+  } 
+
+  .tutorTitle{
+    color:#674818;   
+    /* border: solid black;   */
+    margin-left:0px;
+    width: fit-content;
+  } 
+  .tutorTitle1{
+    display: flex; 
+    gap: 34rem;
+  }

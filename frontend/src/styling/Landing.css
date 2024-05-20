@@ -1,0 +1,32 @@
+.Land{
+    /* border: solid black;  */
+    height: auto; 
+    display: flex; 
+    gap: 0rem;
+}  
+.title1{
+    color: #674818; 
+    font-size: 30px;
+    padding: 3rem; 
+    padding-right: 0; 
+    max-width: max-content; 
+    /* display: flex;
+    justify-content: center;
+    align-items: center; */
+} 
+.title1>h2{
+    margin-top: 8rem;
+    margin-left: 3rem;  
+    /* border: solid black;  */ 
+    font-size:50px;
+    width: fit-content;
+} 
+.title1>p{
+    margin-left: 3rem; 
+    /* margin-right: 1rem; */
+    color: black; 
+    font-size: x-large; 
+    /* border: solid black;  */
+    min-width: 500px;
+    max-width: 500px;
+}

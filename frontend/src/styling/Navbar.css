@@ -1,0 +1,34 @@
+.nav { 
+    background-color: #674818; 
+    width: 100%; 
+    height: 110px; 
+    display: flex;
+    align-items: center;
+    padding: 0 20px;
+    box-sizing: border-box; 
+    position: fixed; 
+    z-index: 3;
+}
+.leftItem {
+    margin-right: auto; 
+}
+.nav .rightItem {
+    display: flex;  
+    gap: 1rem;
+}
+.nav .rightItem { 
+    margin-left: 3rem;
+    color: white; 
+    padding: 0.5rem;
+}
+.rightItem>a,.leftItem>a{
+    color: white; 
+    text-decoration: none; 
+    width: fit-content;
+    padding: 0.7rem; 
+    font-size: x-large; 
+    margin: 0.6rem;
+} 
+.nav a:hover{
+    border-bottom: solid wheat;
+}
