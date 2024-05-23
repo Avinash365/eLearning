@@ -9,9 +9,13 @@ import DashProfile from "./Student/DashProfile.js";
 import CoursesBox from "./Student/CoursesBox.js"; 
 import Notices  from "./Student/Notices.js";
 
+import { useAuthContext } from '../context/AuthContext.jsx';
 
 
-function StudentDash() {
+function StudentDash() { 
+
+    const { authUser } = useAuthContext(); 
+
     return (
         <div>
             <div className="dash">
@@ -21,7 +25,7 @@ function StudentDash() {
                     <div className="dashProfileInfo">
                         <div>
                             <InstructorCard
-                                name='Avinash Kumar Jha'
+                                name={authUser.name}
                                 pic='https://th.bing.com/th/id/OIP.WpkpJ3s0SJfNTzpOEy13SgAAAA?w=312&h=334&rs=1&pid=ImgDetMain'
                                 rating='4.7 Instructor Rating'
                                 review='333,566 Reviews'
