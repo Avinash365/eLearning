@@ -26,26 +26,14 @@ Make sure you have the following installed on your machine:
 4. **Navigate to the project directory**:
     ```bash
     cd eLearning1
-    ```
-
-5. **Install all the dependencies for the project**:
-    ```bash
-    npm install
-    ```
-
-6. **Navigate to the frontend directory**:
-    ```bash
-    cd frontend
-    ```
-
-7. **Install all frontend dependencies**:
-    ```bash
-    npm install
-    ```
-
-8. **Start the development server**:
-    ```bash
-    npm start
-    ```
-
-Your application should now be running, and you can view it in your browser.
+    ``
+    
+# Setup .env file  
+        PORT=...
+        MONGO_DB_URI=...
+        JWT_SECRET=...
+        NODE_ENV=... 
+# Build the app 
+        npm run build 
+# Start the app 
+        npm start 
