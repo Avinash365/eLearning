@@ -26,14 +26,25 @@ Make sure you have the following installed on your machine:
     NODE_ENV=...          # Replace ... keep it same. 
     ```
 
-6. **Build the app**:
+6. **Install requried module**:
     ```bash
-    npm run build 
+    npm install 
     ```
-
-7. **Start the app**:
+7. **Run the backend server**:
+   ```bash
+   npm run server
+   ``` 
+7. **Open new terminal and Navigate to the frontend directory**:
     ```bash
-    npm start 
+    cd frontend  || if not working than try cd eLearing1/frontend 
     ```
-
+8. **Install requried  frontend module**:
+   ```bash
+    npm install 
+    ```
+9. **Now see the app**:
+    ```bahs
+    npm start
+    ```
+   
 Make sure to replace the placeholder `...` with the appropriate values for your environment. This `.env` file will contain configuration settings for your application. Once you've set up your `.env` file, you can build and start the app using the provided npm commands.
