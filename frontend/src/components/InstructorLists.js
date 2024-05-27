@@ -1,5 +1,6 @@
 import InstructorCard from './InstructorCard.js';
-import InstrctorCardInfo from '../containers/InstructorCardinfo';
+import InstrctorCardInfo from '../containers/InstructorCardinfo'; 
+import { useNavigate } from 'react-router-dom';
 
 import '../styling/InstructorCard.css'
 
@@ -26,7 +27,12 @@ function createCard(InstrctorCardInfo) {
     )
 }
 
-function InstructorList() {
+function InstructorList() { 
+    const Navigate = useNavigate(); 
+    const handleClick = ()=>{
+        Navigate('/signup')
+    }; 
+
     return (
         <div className=''>
             <p style={{color:'#674818', marginLeft:'5.5rem',marginTop:'4rem', fontSize:'xx-large',padding:'0px'}}>Our Instructor</p>
@@ -34,7 +40,7 @@ function InstructorList() {
             <div className='scrollInstructorList'>
                 {InstrctorCardInfo.map(createCard)}
             </div> 
-            <button style={{ marginLeft:'47%',color: 'white', backgroundColor: '#674818', padding: '0.5rem', fontSize: "medium", width: '180px', borderRadius: '0.5rem', height: '50px' }}>Join As Instructor</button>
+            <button onClick={handleClick} style={{ marginLeft:'47%',color: 'white', backgroundColor: '#674818', padding: '0.5rem', fontSize: "medium", width: '180px', borderRadius: '0.5rem', height: '50px' }}>Join As Instructor</button>
         </div>
     );
 }

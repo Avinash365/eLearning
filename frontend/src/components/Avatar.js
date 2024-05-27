@@ -10,6 +10,6 @@ export default Avatar;
 
 export const Avatar1 = (Props)=>{
     return(
-        <img src="circle-img" src={Props.pic} alt="Logo" style={{ width: '50px', height: '50px', borderRadius: '50%', border: 'solid #674818', float: 'right', marginRight: '1rem', marginTop: '1rem' }} />
+        <img src="circle-img" src={Props.pic} alt="Logo" style={{ width: '50px', height: '50px', borderRadius: '50%', border: 'solid #674818'}} />
     ); 
 }

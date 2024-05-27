@@ -8,8 +8,13 @@ import MarkunreadOutlinedIcon from '@mui/icons-material/MarkunreadOutlined';
 import MobileScreenShareOutlinedIcon from '@mui/icons-material/MobileScreenShareOutlined';
 
 import '../styling/Footer.css'
+import { Link } from 'react-router-dom';  
+ 
 
-function Footer() {
+
+
+function Footer() { 
+   
     return (
         <div className='footer'> 
             <div className='footer0'>
@@ -45,11 +50,11 @@ function Footer() {
                     </div>
                 </div>
                 <div className='foot1'>
-                    <li>HOME</li>
-                    <li>PROFILE</li>
-                    <li>OPTION</li>
-                    <li>OPTION</li>
-                    <li>OPTION</li>
+                    <li to='/'>H0ME</li>
+                    <li >PROFILE</li>
+                    <li >OPTION</li>
+                    <li >OPTION</li>
+                    <li >OPTION</li>
                 </div>
             </div>
         </div>

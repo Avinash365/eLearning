@@ -7,6 +7,7 @@ import SignUp from './pages/SignUp';
 import StudentPage from './pages/StudentPage';
 import TeacherDash from './components/TeacherDash';
 import CoursePage from './pages/CoursePage';
+import CourseTutorials from "./components/CourseTutorials.js";
 
 // import Navbar from './components/Navbar';
 
@@ -20,21 +21,26 @@ function App() {
   const { authUser } = useAuthContext();
   return (
     <div>
-          {/* <Navbar /> Assuming you have a Navbar component */}
-          <Routes>
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/si1" element={<Home1 />} />  
+        <Route path="/si" element={<CourseTutorials/>} />
+        {/* <Route path ="/login" element={<Login/>} /> */}
+        <Route path="/login" element={authUser ? <Navigate to={`/${authUser.email}`} /> : <Login />} />
+        <Route path="/signup" element={authUser ? <Navigate to={`/${authUser.email}`} /> : <SignUp />} />
+        <Route path="/courses" element={<Home/>} />
+        {authUser && authUser.email && (
+          <>
             <Route path={`/${authUser.email}`} element={<Home1 />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/si" element={<Home1 />}/>
-            <Route path="/login" element={authUser ? <Login />: <Navigate to='/' />} />
-            <Route path="/signup" element={authUser ? <SignUp />:<Navigate to='/' />} />
-            <Route path="/courses" element={<CoursePage />} />
-            <Route path={`/${authUser.email}/instructor`} element={<StudentPage />} />
-            <Route path="/teacher-dash" element={<TeacherDash />} />
-            {/* Add other routes here */}
-          </Routes>
-        <Toaster />
+            <Route path={`/${authUser.email}/instructor`} element={<StudentPage />} />  
+            <Route path={`/${authUser.email}/student`} element={<TeacherDash/>} />  
+            <Route path={`/${authUser.email}/course`} element={<CoursePage/>} /> 
+            {/* <Route path="/teacher-dash" element={<TeacherDash />} /> */}
+          </>
+        )}
+      </Routes>
+      <Toaster />
     </div>
   );
 }
-
 export default App;

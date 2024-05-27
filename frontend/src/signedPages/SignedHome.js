@@ -21,7 +21,8 @@ function Home1() {
       <Landing/>    
       <ScrollTutorsCard/>
       {/* <CourseDiscription/> */}
-      <ScrollCourseCard/>
+      <ScrollCourseCard title="All that you need in one place"/> 
+      <ScrollCourseCard title="Most Veiwed Courses"/>
       <InstructorList/> 
       <ScrollFeedbackCard/>
       <Footer/>

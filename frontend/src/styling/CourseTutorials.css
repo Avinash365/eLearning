@@ -1,0 +1,85 @@
+.courseTutorials {
+    /* border: solid black;   */
+    margin-top: 0rem;
+    margin-left: 6rem; 
+    padding:0.1em 0 2rem 0;
+    width: 1286px;
+    height: fit-content;
+    background: #FFFFFF;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.25);
+    border-radius: 20px;
+
+}
+
+.courseTutorials iframe {
+    /* position: absolute; */
+    width: 95%;
+    margin: 0 0 0 2rem;
+    padding: 0;
+    height: 500px;
+    border-radius: 15px;
+}
+
+.courseTutorialsDiscription {
+    display: flex; 
+    width: 95%;
+    margin: 0 0 0 2rem;
+    /* border: solid black; */
+}
+
+.courseTutorialsDiscription>button {
+    width: 195px;
+    height: 50px; 
+    margin: 5rem 13rem 0 7rem;
+    text-transform: capitalize;
+    color: #FFFFFF;
+    font-size: x-large;
+    /* Golden */
+    border: 1px solid #674818;
+    border-radius:10px;
+} 
+.courseTutorialsDiscriptionInfo{
+    width: 400px; 
+    height: 200px;
+    border: solid #674818;
+    border-radius: 15px;
+    padding:0.5rem; 
+}  
+.courseTutorialsDiscriptionInfo > p{
+    display:flex;
+    gap:1rem;
+    align-items:center;
+    color:#2A272D;
+    margin: 1rem 0 0 2rem; 
+    font-size: large;
+}
+.courseTutorialsReview{
+    display: flex; 
+    width: 95%;
+    /* height: 50px; */
+    margin: 0 0 0 2rem; 
+    /* border: solid #674818; */
+    
+} 
+.courseTutorialsReview>input{
+    width: 65%;
+    height: 50px; 
+    border: 2px solid #674818;
+    padding: 0 0 0 1rem;
+} 
+.details{
+    width: 92%; 
+    height: fit-content;
+    /* border: solid black; */
+    margin: 0 0 0 4rem;
+    color: #2A272D;
+} 
+.lession{
+    width: 95%;    
+    /* border: solid black; */
+    margin: 0 0 0 2rem; 
+    color: #2A272D;
+    overflow: hidden; 
+    overflow-y: scroll; 
+    height: 350px;
+} 
