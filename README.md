@@ -1,39 +1,29 @@
-# eLearning
-
-## Getting Started
-
-Follow these steps to get the project up and running on your local machine.
+# Get started with eLearing app 
 
 ### Prerequisites
 
 Make sure you have the following installed on your machine:
 - [Node.js](https://nodejs.org/)
-- [npm](https://www.npmjs.com/)
+- [git](https://git-scm.com/download/win)
+- [MongoDB](https://www.youtube.com/watch?v=gB6WLkSrtJk&ab_channel=ProgrammingKnowledge)
 
 ### Installation Steps
-
-1. **Open your terminal or command prompt**.
-2. **Navigate to the directory where you want to clone the repository**:
-    ```bash
-    cd /path/to/your/desired/directory
-    ```
-
+1. **Create an empty folder and open in Vs code**.
+2. **Open your terminal or command prompt**.
 3. **Clone the repository**:
     ```bash
     git clone https://github.com/Avinash365/eLearning1.git
     ```
-
 4. **Navigate to the project directory**:
     ```bash
     cd eLearning1
     ```
-
-5. **Setup .env file**:
+5. **Open .env file and Edit it**:
     ```bash
-    PORT=...              # Replace ... with your desired port number
-    MONGO_DB_URI=...      # Replace ... with your MongoDB URI
-    JWT_SECRET=...        # Replace ... with your JWT secret key
-    NODE_ENV=...          # Replace ... with 'development' or 'production' depending on your environment
+    PORT=...              # Replace ... Keep it same.
+    MONGO_DB_URI=...      # Replace ... with your MongoDB URI,  make sure you have create database with same name..
+    JWT_SECRET=...        # Replace ... keep it same. 
+    NODE_ENV=...          # Replace ... keep it same. 
     ```
 
 6. **Build the app**:
