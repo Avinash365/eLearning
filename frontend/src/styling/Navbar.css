@@ -1,7 +1,7 @@
 .nav { 
     background-color: #674818; 
     width: 100%; 
-    height: 110px; 
+    height: 90px; 
     display: flex;
     align-items: center;
     padding: 0 20px;
@@ -14,21 +14,27 @@
 }
 .nav .rightItem {
     display: flex;  
-    gap: 1rem;
+    gap: 2rem;
+    margin-right: 2rem;
+    /* border: solid black;  */
+    height: fit-content; 
+    align-items: center;
 }
-.nav .rightItem { 
+/* .nav .rightItem { 
     margin-left: 3rem;
     color: white; 
     padding: 0.5rem;
-}
+} */
 .rightItem>a,.leftItem>a{
     color: white; 
     text-decoration: none; 
     width: fit-content;
-    padding: 0.7rem; 
-    font-size: x-large; 
-    margin: 0.6rem;
-} 
-.nav a:hover{
-    border-bottom: solid wheat;
+    height: fit-content; 
+    font-size: 18px;
+    font-weight:lighter;  
+    align-items: center;
+    /* border: solid black; */
+}  
+.leftItem>a:hover,.rightItem > a:hover{
+    text-decoration: underline;
 }

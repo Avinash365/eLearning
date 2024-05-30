@@ -18,7 +18,11 @@ const userSchema = new Schema({
         type: String,
         required: true,
         minlength: 8
-    },
+    }, 
+    gender:{
+         type: String, 
+         required: true, 
+    }, 
     profilePic: {
         type: String,
         default: ""

@@ -6,7 +6,19 @@
     background-color: white;  
     color: black; 
     padding: 2rem;   
-}  
+    animation: scrollCards 60s linear infinite; 
+} 
+@keyframes scrollCards {
+    0% {
+        transform: translateX(0);
+      }
+      99.9% {
+        transform: translateX(-10%);
+      }
+      100% {
+        transform: translateX(0);
+      }
+  } 
 
 .InstrctorCard1{
    display: flex; 
@@ -28,13 +40,15 @@
 /* scrolling the List*/
 .scrollInstructorList{
     display: flex;  
-    gap: 2rem;
-    width: 1400px; 
+    gap: 0rem;
+    width: 1300px; 
     /* border: solid black;   */
     margin-left: 5.5rem;
     overflow: hidden; 
-    overflow-x: scroll;
-} 
+    overflow-x: scroll;  
+    
+}  
+
 .scrollInstructorList::-webkit-scrollbar {
     display: none; /* Hide the scrollbar */
   }

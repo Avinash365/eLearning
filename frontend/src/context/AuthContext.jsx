@@ -9,16 +9,16 @@ export const useAuthContext = () => {
 export const AuthContextProvider = ({ children }) => {
     const [authUser, setAuthUser] = useState(() => {
         // Initialize state from local storage if available
-        const user = localStorage.getItem("chat-user");
+        const user = localStorage.getItem("eRanter-User");
         return user ? JSON.parse(user) : null;
     });
 
     useEffect(() => {
         // Update local storage whenever authUser changes
         if (authUser) {
-            localStorage.setItem("chat-user", JSON.stringify(authUser));
+            localStorage.setItem("eRanter-User", JSON.stringify(authUser));
         } else {
-            localStorage.removeItem("chat-user");
+            localStorage.removeItem("eRanter-User");
         }
     }, [authUser]);
 

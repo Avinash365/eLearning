@@ -11,9 +11,33 @@ const SignUp = () => {
         name: "",
         email: "",
         password: "",
-        confirmPassword: ""
+        confirmPassword: "",
+        gender: ""
     })
     const { loading, signup } = useSignup();
+
+    // Initialize the state to keep track of which checkbox is checked 
+
+    const [checked, setChecked] = useState(null);
+
+    // Handler for the first checkbox
+    const handleFirstCheckboxChange = () => {
+        setChecked(checked === 'student' ? null : 'student');
+    };
+    // Handler for the second checkbox
+    const handleSecondCheckboxChange = () => {
+        setChecked(checked === 'teacher' ? null : 'teacher');
+    };
+
+    // Function to get the value associated with the checked checkbox
+    const getCheckedValue = () => {
+        if (checked === 'student') {
+            return 'student'
+        } else if (checked === 'teacher') {
+            return 'teacher';
+        }
+        return null;
+    };
 
     const handleChange = (e) => {
         const { name, value } = e.target;
@@ -23,8 +47,11 @@ const SignUp = () => {
         }));
     };
 
-    const handleSubmit = async (e) => {
-        e.preventDefault(); // Corrected typo from preventDeffault() to preventDefault()
+    const handleSubmit = async (e) => { 
+
+        const gender =  getCheckedValue(); 
+        inputs.gender = gender; 
+        e.preventDefault(); // Corrected typo from preventDeffault() to preventDefault() 
         await signup(inputs);
         console.log(inputs); // Log the inputs after signup is complete
     }
@@ -34,8 +61,8 @@ const SignUp = () => {
             <form action="" onSubmit={handleSubmit} className="loginFrom">
 
                 <div className='loginFrom1' style={{ display: 'block' }}>
-                    <h2 style={{ color: '#674818', float: 'right', marginRight: '0rem', width: 'full', marginTop: '5rem', fontWeight: 'bold', height: 'fit-content', marginRight: '45%' }}>SignUp</h2>
-                    <p style={{ color: 'black', marginTop: '0px', width: 'fit-content', height: 'fit-content', float: 'right', marginRight: '20%' }}>How to i get started lorem ipsum dolor at?</p>
+                    <h2 style={{ color: '#674818', float: 'right', width: 'full', marginTop: '5rem', fontWeight: 'bold', height: 'fit-content', marginRight: '44%' }}>SignUp</h2>
+                    <p style={{ color: 'black', marginTop: '0px', marginRight: '23%', width: 'fit-content', height: 'fit-content', float: 'right' }}>How to i get started lorem ipsum dolor at?</p>
                     <input
                         type='text'
                         name='name'
@@ -69,13 +96,22 @@ const SignUp = () => {
                         placeholder='Conform Password' />
 
                     <div style={{ border: '', width: 'fit-content', float: 'right', marginRight: '6rem', marginBottom: '1rem' }}>
-                        <input type="checkbox" /><label style={{ marginLeft: '.5rem', color: '#674818' }}>Student</label>
-                        <input type="checkbox" style={{ marginLeft: '1rem' }} /><label style={{ marginLeft: '.5rem', color: '#674818' }}>Instructor</label>
+                        <input
+                            type="checkbox"
+                            checked={checked === 'student'}
+                            id=''
+                            onChange={handleFirstCheckboxChange}
+                        /><label style={{ marginLeft: '.5rem', color: '#674818' }}>Student</label>
+                        <input
+                            type="checkbox"
+                            checked={checked === 'teacher'}
+                            onChange={handleSecondCheckboxChange}
+                            style={{ marginLeft: '1rem' }} /><label style={{ marginLeft: '.5rem', color: '#674818' }}>Instructor</label>
                     </div>
                     <button disabled={loading} className={`${loading ? 'cursor-not-allowed' : ''} btn`}>
                         {loading ? <span className="loading loading-spinner"></span> : "SignUp"}
                     </button>
-                    <p style={{ height: 'fit-content', width: 'fit-content', float: 'right', marginRight: '35%', marginTop: '0.5rem', color: 'black' }}><Link to='/login' style={{ textDecoration: 'none' }}>allready registered?</Link></p>
+                    <p style={{ height: 'fit-content', width: 'fit-content', float: 'right', marginRight: '36%', marginTop: '0.5rem' }}><Link to='/login' style={{ textDecoration: 'none',color:'black' }}>allready registered?</Link></p>
 
                 </div>
                 <img src='./static/loginImg.png' alt='img' style={{ height: '500px', borderRadius: '0 15px 15px 0' }} />
