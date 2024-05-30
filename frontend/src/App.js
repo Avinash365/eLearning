@@ -1,4 +1,4 @@
-import {Navigate, Route, Routes} from "react-router-dom"; 
+import { Navigate, Route, Routes } from "react-router-dom";
 
 import Home from './pages/Home';
 import Home1 from "./signedPages/SignedHome.js";
@@ -20,21 +20,22 @@ function App() {
   const { authUser } = useAuthContext();
   return (
     <div>
-          {/* <Navbar /> Assuming you have a Navbar component */}
-          <Routes>
-            <Route path={`/${authUser.email}`} element={<Home1 />} />
-            <Route path="/" element={<Home />} />
-            <Route path="/si" element={<Home1 />}/>
-            <Route path="/login" element={authUser ? <Login />: <Navigate to='/' />} />
-            <Route path="/signup" element={authUser ? <SignUp />:<Navigate to='/' />} />
-            <Route path="/courses" element={<CoursePage />} />
+      <Routes>
+        <Route path="/" element={<Home />} />
+        <Route path="/si" element={<Home1 />} />
+        <Route path="/login" element={authUser ? <Navigate to={`/${authUser.email}`} / > : <Login />} />
+        <Route path="/signup" element={authUser ? <Navigate to={`/${authUser.email}`} / > : <SignUp />} />
+        <Route path="/courses" element={<CoursePage />} />
+        {authUser && authUser.email && (
+          <>
+            <Route path={`/${authUser.email}`} element={<Home1 / >} />
             <Route path={`/${authUser.email}/instructor`} element={<StudentPage />} />
             <Route path="/teacher-dash" element={<TeacherDash />} />
-            {/* Add other routes here */}
-          </Routes>
-        <Toaster />
+          </>
+        )}
+      </Routes>
+      <Toaster />
     </div>
   );
 }
-
 export default App;
