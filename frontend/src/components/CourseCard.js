@@ -1,6 +1,8 @@
 import '../styling/CourseCard.css'
 import { Link } from 'react-router-dom';
-import StarPurple500OutlinedIcon from '@mui/icons-material/StarPurple500Outlined';
+// import StarPurple500OutlinedIcon from '@mui/icons-material/StarPurple500Outlined';  
+
+import Rating from '@mui/material/Rating';
 
 function CourseCard(Props) {
     return (
@@ -18,7 +20,7 @@ function CourseCard(Props) {
 
                     <h4 style={{ color: 'black' }}>{Props.info}</h4>
                     <p style={{ color: 'red', fontWeight: 'bold' }}>{Props.price}</p>
-                    <p style={{ color: 'rgba(134, 134, 134, 1)', marginTop: '20px' }}>{Props.rating}</p>
+                    <p style={{ color: 'rgba(134, 134, 134, 1)', marginTop: '20px' }}><Rating name="half-rating-read" defaultValue={Props.rating} precision={0.5} readOnly /></p>
                     <a href=''>more info</a>
                     <button>Buy Now</button>
                 </div>
