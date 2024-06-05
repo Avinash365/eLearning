@@ -8,6 +8,7 @@ import StudentPage from './pages/StudentPage';
 import TeacherDash from './components/TeacherDash';
 import CoursePage from './pages/CoursePage';
 import CourseTutorials from "./components/CourseTutorials.js";
+import Payment from "./pages/Payment.js";
 
 // import Navbar from './components/Navbar';
 
@@ -23,8 +24,8 @@ function App() {
     <div>
       <Routes>
         <Route path="/" element={<Home />} />
-<<<<<<< HEAD
         <Route path="/si" element={<Home1 />} />
+        <Route path="/payment" element={<Payment/>} />
         <Route path="/login" element={authUser ? <Navigate to={`/${authUser.email}`} / > : <Login />} />
         <Route path="/signup" element={authUser ? <Navigate to={`/${authUser.email}`} / > : <SignUp />} />
         <Route path="/courses" element={<CoursePage />} />
@@ -33,21 +34,7 @@ function App() {
             <Route path={`/${authUser.email}`} element={<Home1 / >} />
             <Route path={`/${authUser.email}/instructor`} element={<StudentPage />} />
             <Route path="/teacher-dash" element={<TeacherDash />} />
-=======
-        <Route path="/si1" element={<Home1 />} />  
-        <Route path="/si" element={<CourseTutorials/>} />
-        {/* <Route path ="/login" element={<Login/>} /> */}
-        <Route path="/login" element={authUser ? <Navigate to={`/${authUser.email}`} /> : <Login />} />
-        <Route path="/signup" element={authUser ? <Navigate to={`/${authUser.email}`} /> : <SignUp />} />
-        <Route path="/courses" element={<Home/>} />
-        {authUser && authUser.email && (
-          <>
-            <Route path={`/${authUser.email}`} element={<Home1 />} />
-            <Route path={`/${authUser.email}/instructor`} element={<StudentPage />} />  
-            <Route path={`/${authUser.email}/student`} element={<TeacherDash/>} />  
-            <Route path={`/${authUser.email}/course`} element={<CoursePage/>} /> 
-            {/* <Route path="/teacher-dash" element={<TeacherDash />} /> */}
->>>>>>> 1b4f69bc3a576345e9d5b0b93ab17e1e3771832f
+      
           </>
         )}
       </Routes>
