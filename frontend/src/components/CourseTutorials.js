@@ -2,13 +2,14 @@ import * as React from 'react';
 import '../styling/CourseTutorials.css'
 import Rating from '@mui/material/Rating';
 
-
+import { useLocation } from 'react-router-dom';
 
 import Typography from '@mui/material/Typography';
 import FileDownloadOutlinedIcon from '@mui/icons-material/FileDownloadOutlined';
 import TimelapseOutlinedIcon from '@mui/icons-material/TimelapseOutlined';
 import LanguageSharpIcon from '@mui/icons-material/LanguageSharp';
 import PersonOutlineOutlinedIcon from '@mui/icons-material/PersonOutlineOutlined';
+import NavigateBeforeIcon from '@mui/icons-material/NavigateBefore';
 
 
 const ReadMore = ({ children }) => {
@@ -32,18 +33,65 @@ const ReadMore = ({ children }) => {
 };
 
 
+function LessionBox(Props) {
+    return (
+        <div style={{ margin: '0 0 0 2rem' }}>
+            <span style={{ color: 'black', fontSize: 'x-large', fontWeight: 'bold' }}>Lession {Props.lessionNo}</span><span style={{ color: '#674818', fontSize: 'large', fontWeight: 'bold', margin: '0 0 0 1rem' }}>{Props.title}</span>
+            <p>{Props.description}</p>
+        </div>
+    )
+};
+
 
 function CourseTutorials() {
 
-    const [value, setValue] = React.useState(4) 
+    const [value, setValue] = React.useState(4)
+    const location = useLocation();
+
+    const { Props } = location.state;
+
+    if (!Props) {
+        return <h1 style={{ color: "black" }}>No course details available.</h1>;
+    }
+
+    console.log(Props)
+    const { courseName, courseUrl, courseDetails, lessons } = Props;
+
+    const embedCourseUrl = convertToEmbedUrl(courseUrl);
+
+    console.log({ courseName, courseUrl, courseDetails, lessons });
+
+    function setLessionBox(lessons, index) {
+        return (
+            <LessionBox
+                key={lessons.id}
+                lessionNo={index + 1}
+                title={lessons.title}
+                description={lessons.description}
+            />
+        )
+    }
 
     return (
         <div style={{ padding: '2rem' }}>
-            <a style={{ color: '#674818', margin: '0 0 0 7rem', textDecoration: 'underline', fontWeight: 'bold' }}>&lt; Back</a>
+            <a 
+                onClick={() => window.history.back()}
+                style={{
+                    color: '#674818',
+                    margin: '0 0 0 7rem',
+                    textDecoration: 'underline',
+                    fontWeight: 'bold',
+                    display: 'flex',
+                    alignItems: 'center'
+                }}
+            >
+                <NavigateBeforeIcon />
+                <span>Back</span></a>
+
             <div className="courseTutorials">
-                <h2 style={{ color: '#0A4A4A', margin: '2rem 0 0 2rem' }}>{'Unconscious Bias'}</h2>
+                <h2 style={{ color: '#0A4A4A', margin: '2rem 0 0 2rem' }}>{courseName}</h2>
                 <iframe
-                    src="https://www.youtube.com/embed/jC3YhBFKZxI"
+                    src={embedCourseUrl}
                     allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
                     allowFullScreen
                     title="Embedded YouTube"
@@ -63,41 +111,12 @@ function CourseTutorials() {
                 <h2 style={{ color: '#674818', textDecoration: 'underline', margin: '0 0 0 2rem' }}>Details</h2>
                 <div className='details'>
                     <ReadMore>
-                        GeeksforGeeks: A Computer Science portal for geeks. It contains well written, well thought and well explained compute science, programming articles and quizzes. It provides a variety of services for you to learn, so thrive and also have fun! Free Tutorials, Millions of Articles, Live, Online and Classroom Courses ,Frequent Coding Competitions, Webinars by Industry Experts, Internship opportunities, and Job Opportunities. Knowledge is power! GeeksforGeeks: A Computer Science portal for geeks. It contains well written, well thought and well explained compute science, programming articles and quizzes. It provides a variety of services for you to learn, so thrive and also have fun! Free Tutorials, Millions of Articles, Live, Online and Classroom Courses ,Frequent Coding Competitions, Webinars by Industry Experts, Internship opportunities, and Job Opportunities. Knowledge is power!  GeeksforGeeks: A Computer Science portal for geeks. It contains well written, well thought and well explained compute science, programming articles and quizzes. It provides a variety of services for you to learn, so thrive and also have fun! Free Tutorials, Millions of Articles, Live, Online and Classroom Courses ,Frequent Coding Competitions, Webinars by Industry Experts, Internship opportunities, and Job Opportunities. Knowledge is power!  GeeksforGeeks: A Computer Science portal for geeks. It contains well written, well thought and well explained compute science, programming articles and quizzes. It provides a variety of services for you to learn, so thrive and also have fun! Free Tutorials, Millions of Articles, Live, Online and Classroom Courses ,Frequent Coding Competitions, Webinars by Industry Experts, Internship opportunities, and Job Opportunities. Knowledge is power!  GeeksforGeeks: A Computer Science portal for geeks. It contains well written, well thought and well explained compute science, programming articles and quizzes. It provides a variety of services for you to learn, so thrive and also have fun! Free Tutorials, Millions of Articles, Live, Online and Classroom Courses ,Frequent Coding Competitions, Webinars by Industry Experts, Internship opportunities, and Job Opportunities. Knowledge is power!
+                        {courseDetails}
                     </ReadMore>
                 </div>
-
                 <h2 style={{ color: '#674818', textDecoration: 'underline', margin: '0 0 0 2rem' }}>Lession</h2>
                 <div className='lession'>
-                    <div style={{ margin: '0 0 0 2rem' }}>
-                        <span style={{ color: 'black', fontSize: 'x-large', fontWeight: 'bold' }}>{'Lession 1'}</span><span style={{ color: '#674818', fontSize: 'x-large', fontWeight: 'bold', margin: '0 0 0 1rem' }}>{'Lesson Title'}</span>
-                        <p>Lorem ipsum dolor sit amet. Nam provident provident sit autem perferendis et error.Lorem ipsum dolor sit amet. Nam provident provident sit autem perferendis et error.</p>
-                    </div>
-                    <div style={{ margin: '0 0 0 2rem' }}>
-                        <span style={{ color: 'black', fontSize: 'x-large', fontWeight: 'bold' }}>{'Lession 1'}</span><span style={{ color: '#674818', fontSize: 'x-large', fontWeight: 'bold', margin: '0 0 0 1rem' }}>{'Lesson Title'}</span>
-                        <p>Lorem ipsum dolor sit amet. Nam provident provident sit autem perferendis et error.Lorem ipsum dolor sit amet. Nam provident provident sit autem perferendis et error.</p>
-                    </div>
-                    <div style={{ margin: '0 0 0 2rem' }}>
-                        <span style={{ color: 'black', fontSize: 'x-large', fontWeight: 'bold' }}>{'Lession 1'}</span><span style={{ color: '#674818', fontSize: 'x-large', fontWeight: 'bold', margin: '0 0 0 1rem' }}>{'Lesson Title'}</span>
-                        <p>Lorem ipsum dolor sit amet. Nam provident provident sit autem perferendis et error.Lorem ipsum dolor sit amet. Nam provident provident sit autem perferendis et error.</p>
-                    </div>
-                    <div style={{ margin: '0 0 0 2rem' }}>
-                        <span style={{ color: 'black', fontSize: 'x-large', fontWeight: 'bold' }}>{'Lession 1'}</span><span style={{ color: '#674818', fontSize: 'x-large', fontWeight: 'bold', margin: '0 0 0 1rem' }}>{'Lesson Title'}</span>
-                        <p>Lorem ipsum dolor sit amet. Nam provident provident sit autem perferendis et error.Lorem ipsum dolor sit amet. Nam provident provident sit autem perferendis et error.</p>
-                    </div>
-                    <div style={{ margin: '0 0 0 2rem' }}>
-                        <span style={{ color: 'black', fontSize: 'x-large', fontWeight: 'bold' }}>{'Lession 1'}</span><span style={{ color: '#674818', fontSize: 'x-large', fontWeight: 'bold', margin: '0 0 0 1rem' }}>{'Lesson Title'}</span>
-                        <p>Lorem ipsum dolor sit amet. Nam provident provident sit autem perferendis et error.Lorem ipsum dolor sit amet. Nam provident provident sit autem perferendis et error.</p>
-                    </div>
-                    <div style={{ margin: '0 0 0 2rem' }}>
-                        <span style={{ color: 'black', fontSize: 'x-large', fontWeight: 'bold' }}>{'Lession 1'}</span><span style={{ color: '#674818', fontSize: 'x-large', fontWeight: 'bold', margin: '0 0 0 1rem' }}>{'Lesson Title'}</span>
-                        <p>Lorem ipsum dolor sit amet. Nam provident provident sit autem perferendis et error.Lorem ipsum dolor sit amet. Nam provident provident sit autem perferendis et error.</p>
-                    </div>
-                    <div style={{ margin: '0 0 0 2rem' }}>
-                        <span style={{ color: 'black', fontSize: 'x-large', fontWeight: 'bold' }}>{'Lession 1'}</span><span style={{ color: '#674818', fontSize: 'x-large', fontWeight: 'bold', margin: '0 0 0 1rem' }}>{'Lesson Title'}</span>
-                        <p>Lorem ipsum dolor sit amet. Nam provident provident sit autem perferendis et error.Lorem ipsum dolor sit amet. Nam provident provident sit autem perferendis et error.</p>
-                    </div>
-
+                    {lessons.map(setLessionBox)}
                 </div>
                 <h2 style={{ color: '#674818', textDecoration: 'underline', margin: '0 0 0 2rem' }}>Write a Review</h2>
                 <div className='courseTutorialsReview'>
@@ -132,4 +151,22 @@ function CourseTutorials() {
         </div>
     )
 }
-export default CourseTutorials; 
+export default CourseTutorials;
+
+function convertToEmbedUrl(youtubeUrl) {
+    // Extract the video ID from the URL
+    const url = new URL(youtubeUrl);
+    let videoId;
+
+    // Check if it's a short URL (e.g., youtu.be)
+    if (url.hostname === 'youtu.be') {
+        videoId = url.pathname.slice(1);
+    } else {
+        // Regular YouTube URL
+        videoId = url.searchParams.get('v');
+    }
+
+    // Create the embed URL
+    const embedUrl = `https://www.youtube.com/embed/${videoId}`;
+    return embedUrl;
+}

@@ -1,25 +1,22 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-
-
 import './index.css';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
-
 import { BrowserRouter } from "react-router-dom";  // npm i react-router-dom 
-import { AuthContextProvider } from './context/AuthContext.jsx';
-
-// import Footer from "./components/Footer.js"
+import { AuthContextProvider } from './context/AuthContext';  // Ensure this matches your context file
+import { CoursesProvider } from './context/UserCourseContext';  // Ensure this matches your context file
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
   <React.StrictMode>
     <BrowserRouter>
       <AuthContextProvider>
-        <App />
+        <CoursesProvider>
+          <App />
+        </CoursesProvider>
       </AuthContextProvider>
     </BrowserRouter>
-
   </React.StrictMode>
 );
 

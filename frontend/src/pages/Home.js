@@ -1,7 +1,4 @@
-
 import '../App.css'
-
-
 import Navbar from '../components/Navbar.js'
 import Landing from '../components/Landing.js'
 import ScrollCourseCard from '../components/ScrollCourseCard.js'
@@ -21,7 +18,7 @@ function Home() {
       <Landing/>    
       <ScrollTutorsCard/>
       {/* <CourseDiscription/> */}
-      <ScrollCourseCard/>
+      <ScrollCourseCard title ="Most View Course"/>
       <InstructorList/> 
       <ScrollFeedbackCard/>
       <Footer/>

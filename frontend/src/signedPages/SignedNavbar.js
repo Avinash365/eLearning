@@ -20,7 +20,7 @@ function SignedNavbar() {
     return (
         <div className="nav">
             <div className='leftItem'>
-                <Link to='/' className=''>NAME</Link>
+                <Link to='/' className=''>LEARNIFY</Link>
             </div>
             <div className='rightItem' style={{}}>
                 <Link to={`/${authUser.email}/course`} state={{}}>Courses</Link>

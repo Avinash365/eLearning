@@ -9,16 +9,16 @@ export const useAuthContext = () => {
 export const AuthContextProvider = ({ children }) => {
     const [authUser, setAuthUser] = useState(() => {
         // Initialize state from local storage if available
-        const user = localStorage.getItem("eRanter-User");
+        const user = localStorage.getItem("Elearning_user");
         return user ? JSON.parse(user) : null;
     });
 
     useEffect(() => {
         // Update local storage whenever authUser changes
         if (authUser) {
-            localStorage.setItem("eRanter-User", JSON.stringify(authUser));
+            localStorage.setItem("Elearning_user", JSON.stringify(authUser));
         } else {
-            localStorage.removeItem("eRanter-User");
+            localStorage.removeItem("Elearning_user");
         }
     }, [authUser]);
 

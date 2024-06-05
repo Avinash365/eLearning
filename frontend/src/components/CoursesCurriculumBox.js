@@ -1,10 +1,10 @@
 import '../styling/CourseDiscription.css' 
 
-function CourseCurriculumBox(){
+function CourseCurriculumBox(Props){
     return(
         <div className='courseCurriculumBox'>
-            <h2 style={{color:'#674818', fontSize:'30px'}}>01</h2> 
-            <p style={{color:'black'}}>Introduction to Responsive Design</p>
+            <h2 style={{color:'#674818', fontSize:'30px'}}>0{Props.lessionNo}</h2> 
+            <p style={{color:'black'}}>{Props.titleDiscriptions}</p>
         </div>
     )
 } 

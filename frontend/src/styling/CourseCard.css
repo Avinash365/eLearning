@@ -77,7 +77,7 @@
 /* scrolling */ 
 .courseCardBox{ 
     width: 1320px;
-    height: 700px;   
+    height: auto;   
     margin-left:5.5rem;
 
     /* border: solid black; */

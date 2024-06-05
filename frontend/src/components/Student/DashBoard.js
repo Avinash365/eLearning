@@ -8,13 +8,12 @@ import EditIcon from '@mui/icons-material/Edit';
 import CollectionsBookmarkIcon from '@mui/icons-material/CollectionsBookmark';
 import SmsFailedIcon from '@mui/icons-material/SmsFailed';
 import LogoutIcon from '@mui/icons-material/Logout'; 
-
-import { useAuthContext } from '../../context/AuthContext'; 
-
+import { useAuthContext } from '../../context/AuthContext';  
 
 
 
-function Dashboard() { 
+function Dashboard() {  
+
     const {authUser} = useAuthContext(); 
     const { loading, logout } = useLogout();
 
@@ -52,7 +51,7 @@ function Dashboard() {
                 <Link to=" " style={{display:'flex', gap:'1rem',alignItems:'center'}}><SmsFailedIcon /> Notice</Link>
             </p>
             <p style={{ marginTop: '20rem' }}>
-                <a href="/" onClick={handleLogout} style={{display:'flex', gap:'1rem',alignItems:'center'}}><LogoutIcon /> Logout</a>
+                <a  onClick={handleLogout} style={{display:'flex', gap:'1rem',alignItems:'center'}}><LogoutIcon /> Logout</a>
             </p>
         </div>
     );

@@ -5,7 +5,8 @@ import dotenv from 'dotenv';
 import cors from 'cors';
 import cookieParser from "cookie-parser";
 
-import authRoutes from "./routes/auth.routes.js"; // Import authentication routes
+import authRoutes from "./routes/auth.routes.js"; // Import authentication routes 
+import courseRoutes from './routes/course.routes.js'; // Impor course routes
 
 // Load environment variables from .env file
 dotenv.config();
@@ -21,7 +22,8 @@ app.use(cookieParser()); // Parse cookies
 app.use(cors()); // Enable CORS for all routes
 
 // Mount the authRoutes middleware at "/api/auth"
-app.use("/api/auth", authRoutes);
+app.use("/api/auth", authRoutes); 
+app.use("/api", courseRoutes); 
 
 // Basic route for testing
 app.get('/', (req, res) => {

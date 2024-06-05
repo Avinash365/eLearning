@@ -7,7 +7,8 @@ import SignUp from './pages/SignUp';
 import StudentPage from './pages/StudentPage';
 import TeacherDash from './components/TeacherDash';
 import CoursePage from './pages/CoursePage';
-import CourseTutorials from "./components/CourseTutorials.js";
+import CourseTutorials from "./components/CourseTutorials.js"; 
+
 
 // import Navbar from './components/Navbar';
 
@@ -17,14 +18,16 @@ import { useAuthContext } from './context/AuthContext.jsx';
 
 import './App.css'; // Assuming you have a main CSS file
 
+
 function App() {
   const { authUser } = useAuthContext();
   return (
     <div>
-      <Routes>
+      <Routes> 
+        
         <Route path="/" element={<Home />} />
         <Route path="/si1" element={<Home1 />} />  
-        <Route path="/si" element={<CourseTutorials/>} />
+        <Route path="/course-details/:id" element={<CourseTutorials/>} />
         {/* <Route path ="/login" element={<Login/>} /> */}
         <Route path="/login" element={authUser ? <Navigate to={`/${authUser.email}`} /> : <Login />} />
         <Route path="/signup" element={authUser ? <Navigate to={`/${authUser.email}`} /> : <SignUp />} />

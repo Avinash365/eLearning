@@ -17,7 +17,14 @@ function Footer() {
    
     return (
         <div className='footer'> 
-            <div className='footer0'>
+            <div className='footer0'> 
+                <img src='/static/footer1.png'  
+                    style={{
+                        height:'250px',
+                        // border:'solid black',
+                        margin:'12.5rem 0 0 0'
+                    }}
+                />
                 <div className='footer0-box1'>  
                 <h3 style={{ fontWeight: 'bold', fontSize:'30px' }}>GET IN TOUCH</h3>
 

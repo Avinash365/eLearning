@@ -14,8 +14,6 @@ function createTutors(tutorsInfo) {
         />
     )
 }
-
-
 function ScrollTutorsCard() {
     return (
         <div className="tutor">

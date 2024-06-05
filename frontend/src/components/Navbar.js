@@ -5,7 +5,7 @@ function Navbar() {
     return (
         <div className="nav">
             <div className='leftItem'> 
-                <Link to='/' className=''>NAME</Link>
+                <Link to='/' className=''>LEARNIFY</Link>
             </div>
             <div className='rightItem' style={{}}>
                 <Link to='/courses'>Courses</Link>

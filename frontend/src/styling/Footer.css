@@ -6,7 +6,7 @@
 .footer0 {
     height: 450px;
     display: flex;
-    gap: 5.5rem;
+    gap: 1rem;
 
 }
 
@@ -14,8 +14,7 @@
     /* border: solid black; */
     color: black;
     width: 30%;
-    margin-left: 5.3rem;
-    padding: 5rem;
+    padding:2rem;
 }
 
 .footer0-box1>h3,
@@ -32,7 +31,7 @@ p,
     width: 35%;
     height: 500px;
     margin-top: 5.5rem;
-    margin-left:5rem;
+    margin-left:12.2rem;
     background: #FFFFFF;
     /* border: 2.60547px solid #A55C18; */
     box-shadow: 5.21094px 5.21094px 31.2656px 5.21094px rgba(0, 0, 0, 0.08);

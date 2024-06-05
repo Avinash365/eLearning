@@ -11,6 +11,7 @@ import KeyboardArrowLeftOutlinedIcon from '@mui/icons-material/KeyboardArrowLeft
 
 
 
+
 function createCard(cardinfo) {
   return (
     <Card
@@ -25,29 +26,41 @@ function createCard(cardinfo) {
 
 function ScrollFeedbackCard() {
   const boxRef = useRef(null);
+
   const [scrollPosition, setScrollPosition] = useState(0);
 
-  const handleScroll = (scrollOffset) => {
-    setScrollPosition(scrollPosition + scrollOffset)
-    console.log(boxRef.current)
-    console.log(scrollPosition)
+  const handleScroll = async (dir) => {
+    const scrollOffset = dir * boxRef.current.offsetWidth / 3;
+
+    const newScrollPosition = scrollPosition + scrollOffset;
+
+    // If attempting to scroll past the end, reset to the beginning
+    if (newScrollPosition < 0) {
+      setScrollPosition(0);
+    } else if (newScrollPosition > boxRef.current.scrollWidth - boxRef.current.offsetWidth) {
+      setScrollPosition(0);
+    } else {
+      setScrollPosition(newScrollPosition);
+    }
+
     if (boxRef.current) {
-      boxRef.current.scrollLeft = scrollPosition + scrollOffset;
+      boxRef.current.scrollLeft = newScrollPosition;
     }
   };
 
+
   return (
-    <div> 
-      <p style={{textDecoration:'underline',color:'#674818', marginLeft:'5.5rem',marginTop:'5rem', fontSize:'xx-large',padding:'0px'}}>See what others are achieving through learning</p>
+    <div>
+      <p style={{ textDecoration: 'underline', color: '#674818', marginLeft: '5.5rem', marginTop: '5rem', fontSize: 'xx-large', padding: '0px' }}>See what others are achieving through learning</p>
       <div className='feedback'>
         <div className="dictionary" ref={boxRef}>
           {cardinfo.map(createCard)}
         </div>
         <div className='scrollBtn'>
-          <KeyboardArrowLeftOutlinedIcon className='pre-btn' onClick={() => handleScroll(-50)} />
-          <KeyboardArrowRightOutlinedIcon className='pre-btn' onClick={() => handleScroll(50)} />
-        </div> 
-      </div>  
+          <KeyboardArrowLeftOutlinedIcon className='pre-btn' onClick={() => handleScroll(-1)} />
+          <KeyboardArrowRightOutlinedIcon className='pre-btn' onClick={() => handleScroll(1)} />
+        </div>
+      </div>
     </div>
   );
 }

@@ -41,7 +41,7 @@ const useLogin = () => {
             // Save user data in local storage
             localStorage.setItem("eLearning", JSON.stringify(data));
             setAuthUser(data);  // Update auth context with user data
-
+            
             navigate(`/${data.email}`);  // Redirect to the user's home page
 
         } catch (error) {
