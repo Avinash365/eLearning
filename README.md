@@ -18,12 +18,13 @@ Make sure you have the following installed on your machine:
     ```bash
     cd eLearning1
     ```
-5. **Open .env file and Edit it**:
+5. **create a folder with name  .env  in eLearing1 floder and past it**:
     ```bash
-    PORT=...              # Replace ... Keep it same.
-    MONGO_DB_URI=...      # Replace ... with your MongoDB URI,  make sure you have create database with same name..
-    JWT_SECRET=...        # Replace ... keep it same. 
-    NODE_ENV=...          # Replace ... keep it same. 
+        PORT = 8000
+        MONGO_DB_URI =  'mongodb://localhost:27017/eLearning'    // repalce with your mogodb url make sure you create database with same name.. 
+        w = majority 
+        JWT_SECRET=Lrvsv73oj+fimFogoFPxDaNY01VoOdfqR237XG1CzrU=
+        NODE_ENV = development
     ```
 
 6. **Install requried module**:
