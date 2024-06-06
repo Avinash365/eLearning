@@ -12,7 +12,7 @@ Make sure you have the following installed on your machine:
 2. **Open your terminal or command prompt**.
 3. **Clone the repository**:
     ```bash
-    git clone https://github.com/Avinash365/eLearning1.git
+    git clone https://github.com/Avinash365/eLearning.git
     ```
 4. **Navigate to the project directory**:
     ```bash
