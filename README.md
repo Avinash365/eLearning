@@ -16,9 +16,9 @@ Make sure you have the following installed on your machine:
     ```
 4. **Navigate to the project directory**:
     ```bash
-    cd eLearning1
+    cd eLearning
     ```
-5. **create a folder with name  .env  in eLearing1 floder and past it**:
+5. **create a folder with name  .env  in eLearing floder and past it**:
     ```bash
         PORT = 8000
         MONGO_DB_URI =  'mongodb://localhost:27017/eLearning'    // repalce with your mogodb url make sure you create database with same name.. 
@@ -37,7 +37,7 @@ Make sure you have the following installed on your machine:
    ``` 
 7. **Open new terminal and Navigate to the frontend directory**:
     ```bash
-    cd frontend  || if not working than try cd eLearing1/frontend 
+    cd frontend  || if not working than try cd eLearing/frontend 
     ```
 8. **Install requried  frontend module**:
    ```bash
