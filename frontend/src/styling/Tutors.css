@@ -1,0 +1,84 @@
+.tutor{
+    /* border: solid black; */
+    width: 1320px;
+    margin-left: 5.5rem;
+}
+/* scrolling the List*/
+.scrollTutorsList{
+  display: flex;  
+  gap: 2rem;
+  width: 100%; 
+  /* border: solid black;    */
+  margin-left:0px;
+  padding: 0rem;  
+  z-index: 5;
+  overflow: scroll; 
+  overflow-x: auto;
+  scroll-behavior: smooth; 
+  transition: box-shadow 0.3s ease; /* Transition effect for the shadow */
+  /* animation: scrollCards 30s linear infinite; */
+}  
+.scrollTutorsList:hover {
+  box-shadow: inset 50px 0 50px -50px rgba(0, 0, 0, 0.5), inset -50px 0 50px -50px rgba(0, 0, 0, 0.5); /* Shadows on both sides */
+}
+
+
+ .TutorsCard {
+    /* border: solid black;  */
+    max-width: 250px; 
+    min-width: 250px;
+    background-color: white;  
+    /* color: black;  */
+    z-index: -1;
+    padding: 0rem;   
+    /* position: relative;    */
+    flex-shrink: 0;
+    /* transition: transform 1s; */
+    animation: scrollCards 40s linear infinite;
+  }
+
+.scrollTutorsList:hover .TutorsCard {
+  transform: translateX(-100%); /* Move the cards to the left on hover */
+  animation: scrollCards 10s linear infinite;
+}@keyframes scrollCards {
+  0% {
+      transform: translateX(1%);
+  }
+  100% {
+      transform: translateX(-300%);
+  }
+} 
+ 
+
+
+.TutorsDiscription>p{
+    /* border: solid black;  */
+    font-size: smaller;
+    margin: 0; 
+    padding: 0; 
+    width: fit-content;
+    height: fit-content; 
+} 
+.TutorsCardPic{
+    width: 200px;
+    height: 200px;
+    border-radius: 50%;
+}
+.logoDiv10{
+    display: flex; 
+    gap: 0.7rem;
+    width: fit-content;  
+    font-size: smaller;
+    /* border: solid black; */
+}   
+
+  .tutorTitle{
+    color:#674818;   
+    /* border: solid black;   */
+    margin-left:0px;
+    width: fit-content;
+  } 
+  .tutorTitle1{
+    display: flex; 
+    gap: 34rem;
+  } 

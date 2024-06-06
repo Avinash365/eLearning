@@ -1,0 +1,141 @@
+.footer {
+    height: auto;
+    /* border: solid black; */
+}
+
+.footer0 {
+    height: 450px;
+    display: flex;
+    gap: 1rem;
+
+}
+
+.footer0-box1 {
+    /* border: solid black; */
+    color: black;
+    width: 30%;
+    padding:2rem;
+}
+
+.footer0-box1>h3,
+p,
+.mobile,
+.email {
+    padding: 0rem;
+    /* display: block; */
+}
+
+.footer0-box2 {
+    /* border: solid black;  */
+    color: black;
+    width: 35%;
+    height: 500px;
+    margin-top: 5.5rem;
+    margin-left:12.2rem;
+    background: #FFFFFF;
+    /* border: 2.60547px solid #A55C18; */
+    box-shadow: 5.21094px 5.21094px 31.2656px 5.21094px rgba(0, 0, 0, 0.08);
+    /* border-radius: 15.6328px; */
+
+}
+
+.footer0-box2:hover {
+    transform: scale(1.01);
+    z-index: 0.2;
+}
+
+.footer0-box2>input,
+textarea {
+    padding: 0.1rem;
+    padding-left: 0.3rem;
+    margin: 2.5rem;
+    margin-top: 1rem;
+    display: block;
+    width: 80%;
+    height: 40px;
+    color: #674818;
+    border: solid #674818;
+    border-width: 0.1rem;
+    font-size: medium;
+}
+
+.footer0-box2 textarea {
+    height: 100px;
+}
+
+.footer0-box2 h3 {
+    margin-top: 2rem;
+    margin-left: 2.5rem;
+    margin-bottom: 0;
+}
+
+.footer0-box2 button {
+    background-color: #674818;
+    color: white;
+    border-width: 0;
+    margin-left: 2.5rem;
+    width: 81%;
+    height: 40px;
+}
+
+.footer0-box2 button:hover {
+    background-color: #9e6e25;
+    border-width: 0;
+}
+
+.footer1 {
+    height: 450px;
+    border: solid #674818;
+    color: white;
+    background-color: #674818;
+    width: auto;
+}
+
+.footer2 {
+    /* border: solid black;  */
+    /* width: 1300px; */
+    margin-left: 5rem;
+    margin-top: 10rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 8.5rem;
+
+}
+
+.box1 {
+    /* border: solid rgb(244, 16, 28);  */
+    max-width: 30%;
+    min-width: 50px;
+    height: fit-content;
+    align-items: left;
+}
+
+.box1 h3,
+p {
+    margin-bottom: 1rem;
+    margin-left: 0rem;
+    padding: 0px;
+}
+
+.box2 {
+    display: flex;
+    gap: 1rem;
+    color: rgb(200, 202, 202);
+
+}
+
+.foot1 {
+    /* border: solid black;  */
+    /* width: 1300px;  */
+    margin-left: 5.5rem;
+    margin-top: 3rem;
+    display: flex;
+    justify-content: left;
+    list-style: none;
+    font-size: 18px;
+    font-weight: bold;
+    padding: 2rem;
+    padding-left: 4rem;
+    gap: 12.7rem;
+}

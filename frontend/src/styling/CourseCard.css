@@ -1,0 +1,108 @@
+.CourseCard{
+    /* border: solid black;  */
+    max-width: fit-content; 
+    min-width: 250px;  
+    height: 400px;
+    background-color: white;  
+    /* color: black;  */
+    padding: 0.1rem;    
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), 5px 5px rgba(144, 142, 142, 0.1);
+    border-radius: 3px;
+    transition: all 100ms ease-in-out; 
+
+    /* animation: scrollCards 10s linear infinite;  */
+   
+}   
+/* @keyframes scrollCards {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-100%);
+    }
+  }    */
+
+.CourseCard:hover{
+    transform: scale(1.04); 
+    z-index: 0.4;
+}
+.CourseDiscription{
+    margin-left: 0.5rem;
+    padding: 0px;
+} 
+.CourseDiscription>p{
+    /* border: solid black;  */
+    font-size: smaller;
+    margin: 0; 
+    padding: 0; 
+    width: fit-content;
+    height: fit-content; 
+}  
+.CourseDiscription>a{ 
+    text-decoration:underline; 
+    margin-right:0.3rem; 
+    float:right;
+    color: #676767;
+}
+.CourseDiscription>a:hover{
+    color: #674818;
+    border-bottom:none;
+}
+.CourseDiscription>button{
+    width: 55%;  
+    margin-top: 0px; 
+    margin-left: 20%;
+    font-size: large;
+    font-weight: bold;
+    padding: 0.5rem;
+    background-color: #674818; 
+    color: white; 
+    border-radius: 0.5rem;
+}
+
+.CourseCardPic{
+    width: 250px;
+    height: 150px;
+    /* border-radius: 50%; */
+}
+.logoDiv1{
+    display: flex;  
+    margin-left: 0.5rem;
+    gap: 1rem;
+    width: fit-content;  
+    font-size: smaller;
+    /* border: solid black; */
+}  
+
+/* scrolling */ 
+.courseCardBox{ 
+    width: 1320px;
+    height: auto;   
+    margin-left:5.5rem;
+
+    /* border: solid black; */
+}
+
+.scrollCourseCard{
+    width: 1250px; 
+    height: 500px; 
+    /* margin-left: 3rem; */
+    margin-top: 0;
+    display: flex;   
+    justify-content: center; 
+    align-items: center; 
+    gap: 9rem; 
+
+    overflow: hidden; 
+    overflow-x: scroll; 
+
+    /* border: solid black;  */
+     
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), 5px 5px rgba(144, 142, 142, 0.1);
+    border-radius: 3px;
+    transition: all 100ms ease-in-out;
+} 
+.scrollCourseCard::-webkit-scrollbar {
+    display: none; /* Hide the scrollbar */
+  } 
+
