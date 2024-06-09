@@ -1,0 +1,60 @@
+
+.fromPage{
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+}
+.courseFrom {   
+    position: fixed;
+    z-index: 1;  
+    display: none;
+    margin: 5rem 0 0 25%;
+    flex-wrap: wrap;
+    width: 800px;
+    height: auto;  
+    gap: 1rem;
+    padding: 1rem 2rem 2rem 2rem; 
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+    background-color: white;
+    box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.25);
+} 
+.courseFrom.visible {
+    display: flex; /* Visible when 'visible' class is added */
+}
+
+
+.courseFrom > input, .courseFrom>textarea{  
+    flex: 1 1 100px;
+    margin: 0; /* Ensure margin is 0 to prevent gaps */
+    min-width: 45%; 
+    max-width: 45%;
+    height: 30px; 
+    border: solid 1px #674818; 
+    padding: 0.5rem; 
+    font-size: larger;
+    border-radius: 10px; 
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), 5px 5px rgba(144, 142, 142, 0.1); 
+} 
+.courseFrom > select{ 
+    
+    margin: 0; /* Ensure margin is 0 to prevent gaps */
+    min-width: 47%; 
+    max-width: 47%;
+    height: 45px; 
+    border: solid 1px #674818; 
+    padding: 0.5rem; 
+    font-size: larger;
+    border-radius: 9px; 
+    box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), 5px 5px rgba(144, 142, 142, 0.1); 
+}
+.courseFrom>textarea{
+    height: 200px;
+}  
+.courseFrom>button{
+    width: 100px;
+    height: 40Px; 
+    border-radius: 4px;
+    color: white;
+}

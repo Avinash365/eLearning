@@ -10,6 +10,8 @@ import CoursePage from './pages/CoursePage';
 
 import CourseTutorials from "./components/CourseTutorials.js"; 
 
+
+
 import Payment from "./pages/Payment.js";
 
 
@@ -27,10 +29,8 @@ function App() {
   return (
     <div>
       <Routes> 
-        
         <Route path="/" element={<Home />} />
-
-        <Route path="/course-details/:id" element={<CourseTutorials/>} />
+        <Route path="/course-details/:id" element={<CourseTutorials/>} /> 
         <Route path="/login" element={authUser ? <Navigate to={`/${authUser.email}`} /> : <Login />} />
         <Route path="/signup" element={authUser ? <Navigate to={`/${authUser.email}`} /> : <SignUp />} />
         <Route path="/payment" element={<Payment/>} />

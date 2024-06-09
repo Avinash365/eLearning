@@ -42,4 +42,11 @@
     margin-top: 1rem;
     padding: 1rem;
 
-}
+} 
+
+.editCourse{ 
+    color: #674818;
+    float: right;
+    padding: 0.3rem; 
+    cursor: pointer;
+} 

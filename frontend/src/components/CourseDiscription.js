@@ -1,11 +1,18 @@
 import '../styling/CourseDiscription.css'
-
 import { useNavigate } from 'react-router-dom';
 import CourseCurriculumBox from './CoursesCurriculumBox';  
+import DeleteIcon from '@mui/icons-material/Delete'; 
+import EditIcon from '@mui/icons-material/Edit';
+
+import { useAuthContext } from '../context/AuthContext.jsx';  
 
 
-function CourseDiscription(Props) {  
-   console.log(Props.id); 
+function CourseDiscription(Props) {   
+   
+   const { authUser } = useAuthContext();  
+   console.log(authUser)
+   let displayEdit = authUser.gender === 'student' ? "none" : ""; 
+   console.log(displayEdit);
 
    const lession = Props.lessons;  
    const navigate = useNavigate();
@@ -48,7 +55,9 @@ function CourseDiscription(Props) {
             <div className='content' >
                 <h3 style={{ color: '#674818', width: '100%', margin: '0px', height: '10px', border: '', }}>Curriculum</h3>
                 {lession.slice(0, Math.min(lession.length, 5)).map(setCourseCurriculumBox)}
-            </div>
+            </div> 
+            <DeleteIcon className="editCourse" style={{display:displayEdit}}/> 
+            <EditIcon className="editCourse" style={{display:displayEdit}}/>
         </div>
     )
 }

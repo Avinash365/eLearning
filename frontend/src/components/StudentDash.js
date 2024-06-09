@@ -10,15 +10,18 @@ import CoursesBox from "./Student/CoursesBox.js";
 import Notices  from "./Student/Notices.js";
 
 import { useAuthContext } from '../context/AuthContext.jsx';
+import CourseFrom from './CourseFrom.jsx';
+
 
 
 function StudentDash() { 
 
-    const { authUser } = useAuthContext(); 
+    const { authUser } = useAuthContext();  
 
     return (
         <div>
-            <div className="dash">
+            <div className="dash"> 
+            <CourseFrom />
                 <Dashboard/>
                 <div className="dashProfile">
                     <DashProfile/>
@@ -30,7 +33,7 @@ function StudentDash() {
                                 rating='4.7 Instructor Rating'
                                 review='333,566 Reviews'
                                 student='9,999,999 Students'
-                                course='Courses'
+                                course='Courses' 
                             />
                         </div>
                         <div className="aboutMe">
