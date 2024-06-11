@@ -19,7 +19,7 @@ function Payment() {
                     <div className="div-7">
                         <div className="div-8">Amount</div>
                     </div>
-                    <div className="div-9">Confirm</div>
+                    <div className="div-9" >Confirm</div>
                 </div>
             </div>
         </div>

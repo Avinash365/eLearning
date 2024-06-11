@@ -23,7 +23,8 @@ app.use(cors()); // Enable CORS for all routes
 
 // Mount the authRoutes middleware at "/api/auth"
 app.use("/api/auth", authRoutes); 
-app.use("/api", courseRoutes); 
+app.use("/api", courseRoutes);  
+
 
 // Basic route for testing
 app.get('/', (req, res) => {

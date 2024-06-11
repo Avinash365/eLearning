@@ -35,7 +35,7 @@ const useSignup = () => {
                 // Handle application-specific errors
                 throw new Error(data.error);
             }
-
+            
             toast.success("You signed up successfully"); // Show success toast
 
             // Save user data in local storage
