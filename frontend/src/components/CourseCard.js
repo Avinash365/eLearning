@@ -3,8 +3,16 @@ import { Link } from 'react-router-dom';
 // import StarPurple500OutlinedIcon from '@mui/icons-material/StarPurple500Outlined';  
 
 import Rating from '@mui/material/Rating';
+import { useNavigate } from 'react-router-dom';
 
 function CourseCard(Props) {
+    const navigate = useNavigate();
+    const handleClick = () => {
+        
+            navigate(`/payment`);
+        
+    };
+
     return (
         <div style={{width:'auto', height:'auto', display:'block'}}>
             <div className='CourseCard' >
@@ -22,7 +30,7 @@ function CourseCard(Props) {
                     <p style={{ color: 'red', fontWeight: 'bold' }}>{Props.price}</p>
                     <p style={{ color: 'rgba(134, 134, 134, 1)', marginTop: '20px' }}><Rating name="half-rating-read" defaultValue={Props.rating} precision={0.5} readOnly /></p>
                     <a href=''>more info</a>
-                    <button>Buy Now</button>
+                    <button onClick={handleClick}>Buy Now</button>
                 </div>
             </div> 
             <Link style={{ 
