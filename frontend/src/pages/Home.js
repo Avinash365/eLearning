@@ -10,13 +10,18 @@ import Footer from '../components/Footer.js'
 
 import CourseDiscription from '../components/CourseDiscription.js';
 
+import Payment from './Payment.js'
+
+
+
 function Home() {
 
   return (
     <div>  
       <Navbar/>  
       <Landing/>    
-      <ScrollTutorsCard/>
+      <ScrollTutorsCard/> 
+      <Payment/>
       {/* <CourseDiscription/> */}
       <ScrollCourseCard title ="Most View Course"/>
       <InstructorList/> 

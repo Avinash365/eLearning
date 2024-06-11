@@ -36,7 +36,8 @@
     font-size: larger;
     border-radius: 10px; 
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), 5px 5px rgba(144, 142, 142, 0.1); 
-} 
+}  
+
 .courseFrom > select{ 
     
     margin: 0; /* Ensure margin is 0 to prevent gaps */

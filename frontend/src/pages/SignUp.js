@@ -17,7 +17,7 @@ const SignUp = () => {
     const { loading, signup } = useSignup();
 
     // Initialize the state to keep track of which checkbox is checked 
-
+  
     const [checked, setChecked] = useState(null);
 
     // Handler for the first checkbox
