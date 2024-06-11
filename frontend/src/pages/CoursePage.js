@@ -7,6 +7,8 @@ import { useAuthContext } from "../context/AuthContext.jsx";
 function CoursePage() {
     const { courses = [], loading, error } = useCourses();
     const { authUser } = useAuthContext();
+    
+    console.log(authUser);
 
     if (courses.length === 0) {
         let message = "";

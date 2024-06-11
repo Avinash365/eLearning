@@ -1,6 +1,7 @@
 import InstructorCard from './InstructorCard.js';
 import InstrctorCardInfo from '../containers/InstructorCardinfo'; 
 import { useNavigate } from 'react-router-dom';
+import { useAuthContext } from '../context/AuthContext.jsx';
 
 import '../styling/InstructorCard.css'
 
@@ -13,7 +14,8 @@ import '../styling/InstructorCard.css'
 //       student:'9,999,999 Students', 
 //       course:'7 Courses',
 //       pic:"https://www.gale.com/binaries/content/gallery/gale-us-en/banners/elearning/gale-presents-udemy-for-business/instructor-yu.jpg",
-function createCard(InstrctorCardInfo) {
+function createCard(InstrctorCardInfo) { 
+
     return (
         <InstructorCard
             key={InstrctorCardInfo.id}
@@ -27,7 +29,14 @@ function createCard(InstrctorCardInfo) {
     )
 }
 
-function InstructorList() { 
+function InstructorList() {  
+
+    const {authUser} = useAuthContext(); 
+    let btn = 'Join As Instructor';
+
+    if(authUser){
+        btn = authUser.gender === 'student' ? 'View our Instructor':'Join As Instructor'
+    }
     const Navigate = useNavigate(); 
     const handleClick = ()=>{
         Navigate('/signup')
@@ -40,7 +49,7 @@ function InstructorList() {
             <div className='scrollInstructorList'>
                 {InstrctorCardInfo.map(createCard)}
             </div> 
-            <button onClick={handleClick} style={{ marginLeft:'47%',color: 'white', backgroundColor: '#674818', padding: '0.5rem', fontSize: "medium", width: '180px', borderRadius: '0.5rem', height: '50px' }}>Join As Instructor</button>
+            <button onClick={handleClick} style={{ marginLeft:'47%',color: 'white', backgroundColor: '#674818', padding: '0.5rem', fontSize: "medium", width: '180px', borderRadius: '0.5rem', height: '50px' }}>{btn}</button>
         </div>
     );
 }

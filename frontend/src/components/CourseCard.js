@@ -14,7 +14,7 @@ function CourseCard(Props) {
     };
 
     return (
-        <div style={{width:'auto', height:'auto', display:'block'}}>
+        <div style={{ width: 'auto', height: 'auto', display: 'block' }}>
             <div className='CourseCard' >
 
                 <img src={Props.pic} className='CourseCardPic' />
@@ -32,12 +32,19 @@ function CourseCard(Props) {
                     <a href=''>more info</a>
                     <button onClick={handleClick}>Buy Now</button>
                 </div>
-            </div> 
-            <Link style={{ 
+            </div>
+            <div
+                style={{
                     // position:"absolute", 
-                    color:'#674818',
-                    marginLeft:'28%', 
-                }}>View More info</Link>
+                    marginTop: '1rem',
+                    display:'flex', 
+                    alignItems:'center',
+                    justifyContent:'center',
+                    // border: 'solid black'
+                }}
+            >
+                <Link style={{ color: '#674818'}}>View More info</Link>
+            </div>
         </div>
     );
 }

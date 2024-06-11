@@ -36,7 +36,9 @@ h1 span {
   padding: 5px 15px;
   background: #2ec2b0;
 }
-
+input:hover{
+  border: none;
+}
 
 /* .gentium-book-plus-regular {
   font-family: "Gentium Book Plus", serif;

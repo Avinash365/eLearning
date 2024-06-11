@@ -4,6 +4,13 @@ import AddCircleIcon from '@mui/icons-material/AddCircle';
 import { useAuthContext } from '../../context/AuthContext.jsx';
 import { useNavigate } from 'react-router-dom';
 
+import CourseFrom from '../CourseFrom.jsx';
+
+
+function openCourseFrom(){
+   document.querySelector('.courseFrom').classList.add('visible'); 
+}
+
 
 
 function CoursesBox() {
@@ -21,7 +28,7 @@ function CoursesBox() {
     };
 
     return (
-        <div className="course">
+        <div className="course"> 
             <div className="allcourse"><p style={{ color: 'black', width: 'fit-content', fontSize: '30px' }}>Courses</p>
              <button 
               onClick={handleClick}
@@ -36,8 +43,9 @@ function CoursesBox() {
             <CourseBox />
             <CourseBox />
             <CourseBox />
-            {/* <CourseBox /> */}
-            <a><AddCircleIcon style={{ color: "#674818", fontSize: '50px', marginLeft: '2rem', marginTop: '2rem' }} /></a>
+            {/* <CourseBox /> */} 
+            <CourseFrom />
+            <a onClick={openCourseFrom}><AddCircleIcon style={{ color: "#674818", fontSize: '50px', marginLeft: '2rem', marginTop: '2rem' }} /></a>
         </div>
     );
 }
