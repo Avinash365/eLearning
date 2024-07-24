@@ -28,15 +28,22 @@ const SignUp = () => {
     const handleSecondCheckboxChange = () => {
         setChecked(checked === 'teacher' ? null : 'teacher');
     };
-
+    const handleThirdCheckboxChange = () => {
+        setChecked(checked==='admin' ? null : 'admin'); 
+    }
     // Function to get the value associated with the checked checkbox
     const getCheckedValue = () => {
         if (checked === 'student') {
             return 'student'
-        } else if (checked === 'teacher') {
+        }
+        if (checked === 'teacher') {
             return 'teacher';
         }
-        return null;
+        if (checked==='admin'){
+                return 'admin'; 
+        } 
+        return null;  
+        
     };
 
     const handleChange = (e) => {
@@ -95,7 +102,7 @@ const SignUp = () => {
                         onChange={handleChange}
                         placeholder='Conform Password' />
 
-                    <div style={{ border: '', width: 'fit-content', float: 'right', marginRight: '6rem', marginBottom: '1rem' }}>
+                    <div style={{ border: '',display:'flex', width: 'fit-content',marginBottom: '1rem', marginRight:'9rem'}}>
                         <input
                             type="checkbox"
                             checked={checked === 'student'}
@@ -106,7 +113,12 @@ const SignUp = () => {
                             type="checkbox"
                             checked={checked === 'teacher'}
                             onChange={handleSecondCheckboxChange}
-                            style={{ marginLeft: '1rem' }} /><label style={{ marginLeft: '.5rem', color: '#674818' }}>Instructor</label>
+                            style={{ marginLeft: '1rem' }} /><label style={{ marginLeft: '.5rem', color: '#674818' }}>Instructor</label> 
+                             <input
+                            type="checkbox"
+                            checked={checked === 'admin'}
+                            onChange={handleThirdCheckboxChange}
+                            style={{ marginLeft: '1rem' }} /><label style={{ marginLeft: '.5rem', color: '#674818' }}>admin</label>
                     </div>
                     <button disabled={loading} className={`${loading ? 'cursor-not-allowed' : ''} btn`}>
                         {loading ? <span className="loading loading-spinner"></span> : "SignUp"}

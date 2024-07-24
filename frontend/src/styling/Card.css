@@ -15,7 +15,7 @@
     background-color:white;
     transition: all 100ms ease-in-out;
   }  
-  .term:hover{
+  .term.hover, .term:hover{
 		transform: scale(1);
 		background: #674818; 
     color: white;
@@ -27,7 +27,19 @@
       color: white;
     }
 		/* box-shadow: 2px 2px 2px #000; */ 
-	} 
+	}   
+  .term.hover:hover{
+    background-color:white; 
+    color: #674818;
+		z-index: 0; 
+    .icon{
+      color: #674818;
+    }
+    a{
+      color: #674818;
+    }
+  }
+
 
   
   .dictionary > .term > dt {

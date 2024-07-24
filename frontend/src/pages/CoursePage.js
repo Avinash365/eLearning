@@ -6,8 +6,10 @@ import { useAuthContext } from "../context/AuthContext.jsx";
 
 function CoursePage() {
     const { courses = [], loading, error } = useCourses();
+
     const { authUser } = useAuthContext();
-    
+    console.log(courses); 
+
     console.log(authUser);
 
     if (courses.length === 0) {
@@ -37,6 +39,9 @@ function CoursePage() {
                 courseDetails={courses.courseDetails}
                 lessons={courses.lessons}
                 timeTakenToComplete={courses.timeTakenToComplete}
+                price = {courses.price} 
+                level = {courses.courseLevel}
+                name = {courses.authorName}
             />
         );
     }

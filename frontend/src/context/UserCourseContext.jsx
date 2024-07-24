@@ -21,7 +21,7 @@ export const CoursesProvider = ({ children }) => {
 
       setLoading(true); // Start loading when fetching courses
       try {
-        const response = await fetch(`http://localhost:8000/api/user_courses?email=${encodeURIComponent(authUser.email)}`, {
+        const response = await fetch(`http://localhost:8000/api/course/user_courses?email=${encodeURIComponent(authUser.email)}`, {
           method: "GET",
           headers: { "Content-Type": "application/json" },
         });
@@ -30,9 +30,10 @@ export const CoursesProvider = ({ children }) => {
           throw new Error(`Error: ${response.statusText}`);
         }
 
-        const data = await response.json(); 
+        const data = await response.json();   
         setCourses(data.courses); 
-        console.log(data.courses); 
+        console.log(data.courses);  
+        
       } catch (error) {
         setError(error.message);
       } finally {

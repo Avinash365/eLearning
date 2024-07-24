@@ -43,7 +43,6 @@ const useSignup = () => {
             setAuthUser(data); // Update auth context with user data
             
             navigate(`/${data.email}`); // Redirect to the user's home page
-
         } catch (error) {
             toast.error(error.message); // Show error toast
         } finally {

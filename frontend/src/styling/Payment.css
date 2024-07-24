@@ -19,7 +19,7 @@
 
 .div-2 { 
     position: absolute;  
-    display: none;
+    display:inline;
     z-index: 1;
     margin-top: 40px; 
     border: solid 1px #674818;
@@ -176,4 +176,16 @@
         white-space: initial;
         padding: 0 20px;
     }
+} 
+
+.close-btn{
+    margin:0 0 0 94%; 
+    color: #674818; 
+}
+
+.close-btn:hover{
+    background-color: #674818;  
+    color: #fff; 
+    border-radius: 50%; 
+
 }

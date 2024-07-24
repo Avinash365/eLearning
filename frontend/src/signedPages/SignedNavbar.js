@@ -10,7 +10,9 @@ import { useNavigate } from 'react-router-dom';
 
 function SignedNavbar() {  
     const navigate = useNavigate();
-    const { authUser } = useAuthContext(); 
+    const { authUser } = useAuthContext();  
+
+
 
     if(!authUser){
         navigate('/');
@@ -25,8 +27,8 @@ function SignedNavbar() {
             <div className='rightItem' style={{}}>
                 <Link to={`/${authUser.email}/course`} state={{}}>Courses</Link>
                 {/* <Link to='/instructor'>Instructor</Link> */} 
-                <Link to={authUser.gender === 'teacher' ? `/${authUser.email}/instructor`: `/${authUser.email}/student`}>{authUser.name}</Link>
-                <Link to={authUser.gender === 'teacher' ? `/${authUser.email}/instructor` : `/${authUser.email}/student`} >
+                <Link to={`/${authUser.email}/${authUser.gender}`}>{authUser.name}</Link>
+                <Link to={`/${authUser.email}/${authUser.gender}`}>
                     {/* <Avatar1 pic={authUser.profilePic}  className="navPic"/> */}  
                     <img src='/static/icon1.png' style={{width:'50px',height:'50px'}}/> 
 

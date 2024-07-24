@@ -2,7 +2,7 @@
 .fromPage{
     display: flex; 
     align-items: center;
-    justify-content: center;
+    justify-content: center; 
 }
 .courseFrom {   
     position: fixed;
@@ -11,38 +11,54 @@
     margin: 5rem 0 0 25%;
     flex-wrap: wrap;
     width: 800px;
-    height: auto;  
+    min-height:450px;  
+    max-height: 490px;
     gap: 1rem;
     padding: 1rem 2rem 2rem 2rem; 
     border-radius: 10px;
     align-items: center;
     justify-content: center;
-    background-color: white;
+    background-color: white;  
+    overflow: hidden; 
+    overflow-y: scroll;
     box-shadow: 1px 1px 20px rgba(0, 0, 0, 0.25);
 } 
 .courseFrom.visible {
-    display: flex; /* Visible when 'visible' class is added */
+    display: flex;  
 }
 
+.lessonsDetails{
+    width: 100%;
+    /* border: solid black; */
+    display: flex; 
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+}
 
-.courseFrom > input, .courseFrom>textarea{  
+.courseFrom > input, 
+.courseFrom>textarea,
+.lessonsDetails>input,
+.lessonsDetails>textarea
+{  
     flex: 1 1 100px;
-    margin: 0; /* Ensure margin is 0 to prevent gaps */
-    min-width: 45%; 
-    max-width: 45%;
+    margin: 0; 
+    min-width: 40%; 
+    max-width: 40%;
     height: 30px; 
     border: solid 1px #674818; 
     padding: 0.5rem; 
     font-size: larger;
     border-radius: 10px; 
     box-shadow: 0 2px 0 rgba(0, 0, 0, 0.1), 5px 5px rgba(144, 142, 142, 0.1); 
-}  
+}   
+
 
 .courseFrom > select{ 
     
-    margin: 0; /* Ensure margin is 0 to prevent gaps */
-    min-width: 47%; 
-    max-width: 47%;
+    margin: 0; 
+    min-width: 42%; 
+    max-width: 42%;
     height: 45px; 
     border: solid 1px #674818; 
     padding: 0.5rem; 
@@ -58,4 +74,5 @@
     height: 40Px; 
     border-radius: 4px;
     color: white;
-}
+} 
+

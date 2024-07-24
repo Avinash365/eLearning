@@ -3,26 +3,31 @@ import '../styling/Payment.css';
 import usePay from '../hooks/usePay.js';  
 import CloseIcon from '@mui/icons-material/Close';
 
+import { useAuthContext } from '../context/AuthContext.jsx'; 
 
-function Payment() {
-    const { checkoutHandler } = usePay();
+
+function Payment(Props) { 
+
+    const { checkoutHandler } = usePay(); 
+
     const [mobileNumber, setMobileNumber] = useState('');
-    const [email, setEmail] = useState('');
-    const [amount, setAmount] = useState('');
+ 
+    const { authUser } = useAuthContext();  
+    
+    const email = authUser.email; 
+    const { id, price} = Props;  
+    console.log(Props); 
 
     const handleSubmit = async (e) => {
         e.preventDefault(); 
         document.querySelector('.div-2').classList.remove('visible');
-        await checkoutHandler(amount, email, mobileNumber); 
+        await checkoutHandler({price, email, mobileNumber,id}); 
     }; 
 
-    const closeCourseFrom = () => {
-        document.querySelector('.div-2').classList.remove('visible');
-    }
 
     return (
             <div className="div-2"> 
-                <a onClick={closeCourseFrom}><CloseIcon style={{color:'#674818', margin:'0 0 0 94%'}}/></a>
+                <a onClick={Props.close}><CloseIcon  className = "close-btn"/></a>
                 <form className="div-3" onSubmit={handleSubmit}>
                     <img
                         loading="lazy"
@@ -44,16 +49,14 @@ function Payment() {
                         type="email"
                         className="div-6"
                         placeholder="Email"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
+                        value={authUser.email}
                     />
                     <div className="div-7">
                         <input 
                             type="text"
                             className="div-8"
                             placeholder="Amount"
-                            value={amount}
-                            onChange={(e) => setAmount(e.target.value)} 
+                            value={price}
                             style={{border:'solid 1px #674819'}}
                         />
                     </div>

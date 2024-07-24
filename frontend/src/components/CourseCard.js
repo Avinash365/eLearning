@@ -1,16 +1,20 @@
 import '../styling/CourseCard.css'
-import { Link } from 'react-router-dom';
+import { Link } from 'react-router-dom'; 
+
+import Popup from 'reactjs-popup'; 
+
+import Payment from '../pages/Payment.js'; 
+
+
 // import StarPurple500OutlinedIcon from '@mui/icons-material/StarPurple500Outlined';  
+
 
 import Rating from '@mui/material/Rating';
 
-
 function CourseCard(Props) {
-
-    const handleClick = () => {
-        document.querySelector('.div-2').classList.add('visible');
-    };
-
+    
+  console.log(Props); 
+    
     return (
         <div style={{ width: 'auto', height: 'auto', display: 'block' }}>
             <div className='CourseCard' >
@@ -24,11 +28,21 @@ function CourseCard(Props) {
                 </div>
                 <div className='CourseDiscription'>
 
-                    <h4 style={{ color: 'black' }}>{Props.info}</h4>
-                    <p style={{ color: 'red', fontWeight: 'bold' }}>{Props.price}</p>
+                    <h4 style={{ color: 'black' }}>Duration: {Props.info}</h4>
+                    <p style={{ color: 'red', fontWeight: 'bold' }}>{Props.price} /-</p>
                     <p style={{ color: 'rgba(134, 134, 134, 1)', marginTop: '20px' }}><Rating name="half-rating-read" defaultValue={Props.rating} precision={0.5} readOnly /></p>
-                    <a href=''>more info</a>
-                    <button onClick={handleClick}>Buy Now</button>
+                    <a href=''>more info</a> 
+
+                    
+                    <Popup trigger={<button>Buy Now</button>} modal nested>
+                        {close => (
+                            <div className='modal'>
+                                <Payment close={close} id = {Props.id} price = {Props.price}/>
+                            </div>
+                        )}
+                    </Popup>
+
+                   
                 </div>
             </div>
             <div
@@ -41,7 +55,7 @@ function CourseCard(Props) {
                     // border: 'solid black'
                 }}
             >
-                <Link style={{ color: '#674818'}}>View More info</Link>
+                <Link  style={{ color: '#674818'}}>View More info</Link>
             </div>
         </div>
     );

@@ -1,12 +1,11 @@
 // import useRazorpay from "react-razorpay";
 
-
 const usePay = () => {
 
     // const [Razorpay] = useRazorpay();
 
-    const checkoutHandler = async (amount, email, mobileNumber) => {
-
+    const checkoutHandler = async (Props) => {
+        console.log(Props); 
         try {
             const response = await fetch('http://localhost:8000/api/payment/checkout', {
                 method: 'POST',
@@ -14,7 +13,7 @@ const usePay = () => {
                     'Content-Type': 'application/json'
                 },
                 body: JSON.stringify({
-                    amount: amount.toString(),
+                    amount: Props.price.toString(),
                 })
             });
             const data = await response.json();
@@ -41,6 +40,28 @@ const usePay = () => {
                 },
                 theme: {
                     "color": "#674818"
+                }, 
+                handler: async function (response) {
+                    try {
+                        console.log(response);
+                        // Call enroll course API after successful payment
+                        const enrollResponse = await fetch('http://localhost:8000/api/course/enrol_course', {
+                            method: 'POST',
+                            headers: {
+                                'Content-Type': 'application/json'
+                            },
+                            body: JSON.stringify({
+                                email: Props.email,
+                                courseId: Props.id
+                            })
+                        });
+                        const enrollData = await enrollResponse.json();
+                        console.log('Enrollment successful:', enrollData);
+                        // Handle successful enrollment here (e.g., update UI, notify user)
+                    } catch (enrollError) {
+                        console.error('Error enrolling in course:', enrollError);
+                        // Handle errors in enrolling here
+                    }
                 }
             };
             const razor = new window.Razorpay(options);

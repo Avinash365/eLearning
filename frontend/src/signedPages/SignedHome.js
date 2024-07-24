@@ -10,7 +10,8 @@ import ScrollTutorsCard from '../components/ScrollTutorsCard.js'
 import InstructorList from '../components/InstructorLists.js' 
 import ScrollFeedbackCard from '../components/ScrollFeedbackCard.js'
 import Footer from '../components/Footer.js' 
-import Payment from '../pages/Payment.js'
+
+// import Payment from '../pages/Payment.js'
 
 // import CourseDiscription from '../components/CourseDiscription.js';
 
@@ -22,7 +23,7 @@ function Home1() {
       <Landing/>    
       <ScrollTutorsCard/>
       {/* <CourseDiscription/> */}
-      <Payment/>
+      {/* <Payment/> */}
       <ScrollCourseCard title="All that you need in one place"/> 
       <ScrollCourseCard title="Most Veiwed Courses"/>
       <InstructorList/> 

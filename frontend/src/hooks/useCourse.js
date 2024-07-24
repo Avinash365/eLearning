@@ -3,7 +3,7 @@ import toast from "react-hot-toast";
 
 const useCourse = () => {
     const { authUser } = useAuthContext();
-
+   
     const getCourse = async () => {
         try {
             const response = await fetch(`http://localhost:8000/api/course/user_courses?email=${encodeURIComponent(authUser.email)}`, {

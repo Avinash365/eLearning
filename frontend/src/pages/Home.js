@@ -21,7 +21,7 @@ function Home() {
       <Navbar/>  
       <Landing/>    
       <ScrollTutorsCard/> 
-      <Payment/>
+      {/* <Payment /> */}
       {/* <CourseDiscription/> */}
       <ScrollCourseCard title ="Most View Course"/>
       <InstructorList/> 

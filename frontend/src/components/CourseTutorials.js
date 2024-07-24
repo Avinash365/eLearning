@@ -48,14 +48,15 @@ function CourseTutorials() {
     const [value, setValue] = React.useState(4)
     const location = useLocation();
 
-    const { Props } = location.state;
+    const { Props } = location.state; 
+    console.log(Props); 
 
     if (!Props) {
         return <h1 style={{ color: "black" }}>No course details available.</h1>;
     }
 
     console.log(Props)
-    const { courseName, courseUrl, courseDetails, lessons } = Props;
+    const { courseName, courseUrl, courseDetails, lessons, name } = Props;
 
     const embedCourseUrl = convertToEmbedUrl(courseUrl);
 
@@ -98,7 +99,7 @@ function CourseTutorials() {
                 ></iframe>
                 <div className='courseTutorialsDiscription'>
                     <div className="courseTutorialsDiscriptionInfo">
-                        <p><PersonOutlineOutlinedIcon /> Creator:<span style={{ color: '#674818' }}>{'Reena Jacob'}</span></p>
+                        <p><PersonOutlineOutlinedIcon /> Creator:<span style={{ color: '#674818' }}>{name}</span></p>
                         <p><FileDownloadOutlinedIcon /> Uploaded On:<span style={{ color: '#674818' }}>{'12/04/2022'}</span></p>
                         <p><TimelapseOutlinedIcon /> Duration:<span style={{ color: '#674818' }}>{'25mins'}</span></p>
                         <p><LanguageSharpIcon /> Language:<span style={{ color: '#674818' }}>{'English'}</span></p>

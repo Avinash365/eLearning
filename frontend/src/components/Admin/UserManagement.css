@@ -1,0 +1,100 @@
+.user-management {
+    border-radius: 9px;
+    background-color: var(--Absolute-White, #fff);
+    display: flex;
+    max-width: 948px;
+    flex-direction: column;
+    font-size: 14px;
+    color: var(--Grey-35, #59595a);
+    font-weight: 400; 
+    height: 350px; 
+    /* border: solid black;  */
+    overflow: hidden; 
+    overflow-y: scroll;
+    padding: 2rem;
+}
+
+@media (max-width: 991px) {
+    .user-management {
+        padding: 0 20px;
+    }
+}
+
+.title { 
+    margin-top: 0px;
+    color: var(--Golden, #674818);
+    font: 700 18px/150% Gentium Book Basic, -apple-system, Roboto, Helvetica, sans-serif;
+}
+
+@media (max-width: 991px) {
+    .title {
+        max-width: 100%;
+    }
+}
+
+.header-row {
+    justify-content: space-between;
+    display: flex;
+    margin-top: 37px;
+    gap: 15px;
+}
+
+@media (max-width: 991px) {
+    .header-row {
+        max-width: 100%;
+        flex-wrap: wrap;
+    }
+}
+
+.header-item {
+    font-family: Be Vietnam Pro, -apple-system, Roboto, Helvetica, sans-serif;
+    border-radius: 6px;
+    background-color: var(--Absolute-White, #fff);
+    padding: 8px 12px;
+    border: 1px solid rgba(241, 241, 243, 1);
+}
+
+.header-item-nowrap {
+    white-space: nowrap;
+}
+
+@media (max-width: 991px) {
+    .header-item-nowrap {
+        white-space: initial;
+    }
+}
+
+.user-row {
+    justify-content: space-between;
+    display: flex;
+    margin-top: 38px;
+    gap: 15px;
+}
+
+@media (max-width: 991px) {
+    .user-row {
+        max-width: 100%;
+        flex-wrap: wrap;
+    }
+}
+
+.user-info {
+    font-family: Be Vietnam Pro, -apple-system, Roboto, Helvetica, sans-serif;
+    border-radius: 6px;
+    background-color: var(--Absolute-White, #fff);
+    padding: 8px 12px;
+    border: 1px solid rgba(241, 241, 243, 1);
+}
+
+.action-button {
+    font-family: Gentium Book Basic, -apple-system, Roboto, Helvetica, sans-serif;
+    border-radius: 6px;
+    box-shadow: 4px 4px 4px 0px rgba(0, 0, 0, 0.25);
+    background-color: var(--Golden, #674818);
+    color: #fff;
+    text-align: center;
+    line-height: 150%;
+    margin: auto 0;
+    padding: 14px 18px;
+    border: 1px solid rgba(241, 241, 243, 1);
+}

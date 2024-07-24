@@ -7,10 +7,13 @@ import StarIcon from '@mui/icons-material/Star';
 
 import Avatar from './components/Avatar.js';
 
-function Card(Props) {
+function Card(Props) {  
+    
+    const isHovered = Props.index === Props.ind;
+    
     return (
         // <dl className="dictionary">
-        <div className="term">
+        <div className={`term ${isHovered ? 'hover' : ''}`}>
             <dt><StarIcon className='icon' /></dt>
             <dd>{Props.comment}</dd>
             <div className='foot'>

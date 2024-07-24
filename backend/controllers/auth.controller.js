@@ -1,4 +1,5 @@
-import User from '../models/user.model.js';
+import User from '../models/user.model.js'; 
+import UserCourse from '../models/userCourse.model.js';
 import bcrypt from "bcryptjs";
 
 import generateTokenAndSetCookie from '../utils/generateJWT.js';
@@ -91,6 +92,8 @@ export const signup = async (req, res) => {
     }
 };
 
+
+
 export const logout = (req, res) => {
     console.log('yeah it hit correct endPoint');
 
@@ -107,3 +110,37 @@ export const logout = (req, res) => {
         res.status(500).json({ error: error.message });
     }
 };
+
+export const getAlluser = async (req, res) => {
+    try {
+        const users = await User.find({}, 'name email gender'); 
+        console.log(users);
+        res.status(200).json(users);
+      } catch (error) {
+        res.status(500).json({ message: error.message });
+      }
+};  
+export const deleteUser = async (req,res) => {
+    try{
+        const {email} = req.body; 
+        const user = await User.findOneAndDelete({email:email}); 
+        if(!user){
+            return res.status(404).json({
+                error: "User not found",
+            });
+        } 
+        const userCourse = await UserCourse.findOneAndDelete({email:email});  
+
+        return res.status(200).json({
+            message: "user and references successfully deleted",
+            user,
+        });
+
+    }
+    catch (err) {
+        console.log(err);
+        return res.status(400).json({
+            error: "Something went wrong",
+        }); 
+    }; 
+}
