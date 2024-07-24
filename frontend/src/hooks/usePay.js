@@ -22,7 +22,7 @@ const usePay = () => {
             console.log(id);
 
             const options = {
-                key:"rzp_test_BxnMxiPHqiqEo5",
+                key:"rzp_test_hww22vWzarsHeG",
                 amount: "50000",
                 currency: "INR",
                 name: "learnify",
